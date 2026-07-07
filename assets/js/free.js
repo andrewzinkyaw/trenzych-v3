@@ -1,136 +1,144 @@
-const vpnData = [
-{
-    country: "Singapore",
-    name: "🇸🇬 Singapore #1",
-    protocol: "VLESS",
-    ping: "18 ms",
-    network: "WS + TLS",
-    speed: "1 Gbps",
-    config: "vless://YOUR_CONFIG_1"
-},
-    {
-    country:"USA",
-    name:"🇺🇸 USA #1",
-    protocol:"VLESS",
-    ping:"145 ms",
-    network:"WS + TLS",
-    speed:"1 Gbps",
-    config:"vless://USA"
-},
-
-{
-    country:"Japan",
-    name:"🇯🇵 Japan #1",
-    protocol:"VLESS",
-    ping:"32 ms",
-    network:"WS + TLS",
-    speed:"1 Gbps",
-    config:"vless://JP"
-},
-
-{
-    country:"Singapore",
-    name:"🇸🇬 Singapore #2",
-    protocol:"VLESS",
-    ping:"20 ms",
-    network:"WS + TLS",
-    speed:"1 Gbps",
-    config:"vless://SG2"
-},
-{
-    country: "Japan",
-    name: "🇯🇵 Japan #1",
-    protocol: "VLESS",
-    ping: "24 ms",
-    network: "WS + TLS",
-    speed: "1 Gbps",
-    config: "vless://YOUR_CONFIG_2"
-}
-];
-
 const vpnList = document.getElementById("vpnList");
+const search = document.getElementById("search");
+const country = document.getElementById("country");
 
-function loadVPN(list){
+let vpnData = [];
+
+async function loadVPN() {
+
+    const res = await fetch("/api/list");
+    vpnData = await res.json();
+
+    render(vpnData);
+
+}
+
+function render(data) {
 
     vpnList.innerHTML = "";
 
-    list.forEach(vpn=>{
+    data.forEach(vpn => {
 
         vpnList.innerHTML += `
-        <div class="server-card">
 
-            <div class="server-top">
-                <div class="server-name">${vpn.name}</div>
-                <span class="online">ONLINE</span>
-            </div>
+<div class="vpn-card">
 
-            <div class="server-info">
+<div class="top">
 
-                <div class="info-box">
-                    <div class="info-title">Protocol</div>
-                    <div class="info-value">${vpn.protocol}</div>
-                </div>
+<div class="left">
 
-                <div class="info-box">
-                    <div class="info-title">Ping</div>
-                    <div class="info-value">${vpn.ping}</div>
-                </div>
+<span class="badge ${vpn.is_premium ? "premium" : "free"}">
 
-                <div class="info-box">
-                    <div class="info-title">Network</div>
-                    <div class="info-value">${vpn.network}</div>
-                </div>
+${vpn.is_premium ? "💎 PREMIUM" : "FREE"}
 
-                <div class="info-box">
-                    <div class="info-title">Speed</div>
-                    <div class="info-value">${vpn.speed}</div>
-                </div>
+</span>
 
-            </div>
+</div>
 
-            <button class="copy-btn" onclick="copyConfig('${vpn.config}')">
-                📋 Copy Config
-            </button>
+<div class="right">
 
-        </div>
-        `;
+<span class="online">
+
+🟢 ONLINE
+
+</span>
+
+</div>
+
+</div>
+
+<div class="country-row">
+
+<span>
+
+${vpn.country}
+
+</span>
+
+<span>
+
+⚡ 5 ms
+
+</span>
+
+</div>
+
+<h2>
+
+${vpn.title}
+
+</h2>
+
+<div class="protocol">
+
+${vpn.type}
+
+</div>
+
+<div class="active">
+
+🟢 Active
+
+</div>
+
+<div class="config">
+
+${vpn.config}
+
+</div>
+
+<button
+class="copy-btn"
+onclick="copyConfig(\`${vpn.config}\`)">
+
+📋 COPY CONFIG
+
+</button>
+
+</div>
+
+`;
+
     });
 
 }
 
-function copyConfig(config){
+function copyConfig(text){
 
-    navigator.clipboard.writeText(config);
+    navigator.clipboard.writeText(text);
 
-    alert("VPN Config Copied!");
+    alert("Copied!");
 
 }
 
-loadVPN(vpnData);
-const search = document.getElementById("search");
-const country = document.getElementById("country");
+search.oninput = filterVPN;
+
+country.onchange = filterVPN;
 
 function filterVPN(){
 
     const keyword = search.value.toLowerCase();
-    const selected = country.value;
 
-    const result = vpnData.filter(vpn=>{
+    const type = country.value;
 
-        const matchName =
-            vpn.name.toLowerCase().includes(keyword);
+    const result = vpnData.filter(v=>{
 
-        const matchCountry =
-            selected==="all" || vpn.country===selected;
+        const a =
 
-        return matchName && matchCountry;
+            v.title.toLowerCase().includes(keyword);
+
+        const b =
+
+            type=="all" ||
+
+            v.country==type;
+
+        return a && b;
 
     });
 
-    loadVPN(result);
+    render(result);
 
 }
 
-search.addEventListener("input", filterVPN);
-
-country.addEventListener("change", filterVPN);
+loadVPN();
