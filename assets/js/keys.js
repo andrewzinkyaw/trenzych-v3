@@ -11,10 +11,10 @@ let keys = [];
 
 async function loadKeys() {
 
-    const res = await fetch("/api/keys");
+    const res = await fetch("/api/list");
     const data = await res.json();
 
-    keys = data.keys || [];
+    keys = data;
 
     render();
 }
