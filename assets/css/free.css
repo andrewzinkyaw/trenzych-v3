@@ -138,31 +138,28 @@ transform:translateY(-4px);
     align-items:center;
     justify-content:center;
 
-    padding:8px 16px;
-    min-width:72px;
-    height:38px;
+    padding:4px 12px;
+    min-width:58px;
+    height:30px;
 
     border-radius:999px;
 
-    font-size:15px;
+    font-size:13px;
     font-weight:700;
-}
-
-.badge.premium{
-
-background:linear-gradient(90deg,#8E24AA,#C2185B);
-
-color:#fff;
-
+    line-height:1;
+    text-transform:uppercase;
 }
 
 .badge.free{
-
-background:#46D95F;
-
-color:#fff;
-
+    background:linear-gradient(90deg,#4CD964,#34C759);
+    color:#fff;
 }
+
+.badge.premium{
+    background:linear-gradient(90deg,#8E2DE2,#C2185B);
+    color:#fff;
+}
+
 .online{
     display:flex;
     align-items:center;
