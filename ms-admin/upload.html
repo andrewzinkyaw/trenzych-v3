@@ -1,35 +1,18 @@
-<script>
-document.querySelector("button").onclick = async () => {
+const res = await fetch("/api/upload", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    title,
+    country,
+    type,
+    config
+  })
+});
 
-  const title = document.querySelectorAll("input")[0].value;
-  const country = document.querySelectorAll("input")[1].value;
-  const type = document.querySelector("select").value;
-  const config = document.querySelector("textarea").value;
+alert(res.status);
 
-  const res = await fetch("/api/upload", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      title,
-      country,
-      type,
-      config
-    })
-  });
+const data = await res.json();
 
-  const data = await res.json();
-
-  if (data.success) {
-    alert("Upload Success!");
-
-    document.querySelectorAll("input")[0].value = "";
-    document.querySelectorAll("input")[1].value = "";
-    document.querySelector("textarea").value = "";
-    document.querySelector("select").value = "Free";
-  } else {
-    alert(data.message);
-  }
-};
-</script>
+alert(JSON.stringify(data));
