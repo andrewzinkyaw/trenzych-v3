@@ -222,23 +222,22 @@ margin-bottom:20px;
 ========================== */
 
 .active{
-
-    display:inline-flex;
-
+    display:flex;
     align-items:center;
-
+    justify-content:center;
     gap:10px;
 
-    padding:10px 24px;
+    width:fit-content;
+    margin:28px auto;
 
+    padding:12px 28px;
+
+    border:2px solid #32d74b;
     border-radius:999px;
 
-    border:1px solid #33d155;
-
-    color:#33d155;
-
+    color:#32d74b;
+    font-size:18px;
     font-weight:700;
-
 }
 
 /* ==========================
