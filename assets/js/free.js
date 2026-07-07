@@ -124,4 +124,26 @@ function filterVPN(){
 
 }
 
+function getFlag(country){
+
+    const flags = {
+
+        "Singapore":"assets/flags/sg.svg",
+
+        "Japan":"assets/flags/jp.svg",
+
+        "USA":"assets/flags/us.svg",
+
+        "Germany":"assets/flags/de.svg",
+
+        "United Kingdom":"assets/flags/gb.svg"
+
+    };
+
+    const flag = flags[country] || "assets/flags/world.svg";
+
+    return `<img src="${flag}" class="flag">`;
+
+}
+
 loadVPN();
