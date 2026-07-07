@@ -39,7 +39,12 @@ ${vpn.is_premium ? "💎 PREMIUM" : "FREE"}
 
 <span class="online">
 
-🟢 ONLINE
+
+<span class="online">
+
+<span class="status-dot"></span>
+
+ONLINE
 
 </span>
 
@@ -77,7 +82,9 @@ ${vpn.type}
 
 <div class="active">
 
-🟢 Active
+<span class="status-dot"></span>
+
+Active
 
 </div>
 
