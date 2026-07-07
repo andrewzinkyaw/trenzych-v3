@@ -72,7 +72,8 @@ ${vpn.config}
 
 <button
 class="copy-btn"
-onclick="copyConfig(`${vpn.config}`, this)">
+data-config="${encodeURIComponent(vpn.config)}"
+onclick="copyConfig(this)">
 
 📋 COPY CONFIG
 
@@ -86,7 +87,9 @@ onclick="copyConfig(`${vpn.config}`, this)">
 
 }
 
-function copyConfig(text, btn){
+function copyConfig(btn){
+
+    const text = decodeURIComponent(btn.dataset.config);
 
     navigator.clipboard.writeText(text);
 
