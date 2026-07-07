@@ -439,3 +439,25 @@ font-size:17px;
     -webkit-background-clip:border-box !important;
     text-shadow:0 2px 8px rgba(0,0,0,.25) !important;
 }
+
+.copy-btn{
+    position:relative;
+    overflow:hidden;
+    transition:.35s ease;
+}
+
+.copy-btn.copied{
+    background:linear-gradient(135deg,#3B82F6,#2563EB)!important;
+    box-shadow:
+        0 0 18px rgba(59,130,246,.45),
+        0 12px 28px rgba(37,99,235,.35);
+    transform:scale(.98);
+}
+
+.copy-btn.copied::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:rgba(255,255,255,.08);
+}
