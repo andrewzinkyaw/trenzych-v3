@@ -1,0 +1,139 @@
+/* ==========================
+   FREE PAGE
+========================== */
+
+.free-hero{
+    padding:120px 20px 40px;
+    text-align:center;
+}
+
+.free-hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.free-hero p{
+    color:#00E676;
+    font-size:20px;
+}
+
+.search-area{
+    width:min(1100px,92%);
+    margin:40px auto;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.search-area input,
+.search-area select{
+    flex:1;
+    min-width:220px;
+    padding:16px;
+    background:#101B2D;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    color:#fff;
+    font-size:16px;
+    outline:none;
+}
+
+.server-list{
+    width:min(1100px,92%);
+    margin:auto;
+    display:grid;
+    gap:22px;
+}
+
+.server-card{
+    background:#101B2D;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    transition:.25s;
+}
+
+.server-card:hover{
+    transform:translateY(-5px);
+    border-color:#00E676;
+}
+
+.server-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.server-name{
+    font-size:22px;
+    font-weight:700;
+}
+
+.online{
+    background:#00E676;
+    color:#08111F;
+    padding:6px 14px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.server-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.info-box{
+    background:#08111F;
+    border-radius:12px;
+    padding:15px;
+}
+
+.info-title{
+    color:#94A3B8;
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.info-value{
+    font-weight:600;
+}
+
+.copy-btn{
+    width:100%;
+    padding:16px;
+    background:#00E676;
+    color:#08111F;
+    border:none;
+    border-radius:14px;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.copy-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(0,230,118,.35);
+}
+
+@media(max-width:768px){
+
+.free-hero h1{
+    font-size:30px;
+}
+
+.free-hero p{
+    font-size:17px;
+}
+
+.server-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+}
