@@ -171,17 +171,16 @@ transform:translateY(-4px);
 }
 
 .status-dot{
-    width:18px;
-    height:18px;
+    width:10px;
+    height:10px;
     border-radius:50%;
     background:#00ff66;
 
     box-shadow:
-        0 0 8px #00ff66,
-        0 0 18px #00ff66,
-        0 0 30px rgba(0,255,102,.8);
+        0 0 6px #00ff66,
+        0 0 12px rgba(0,255,102,.35);
 
-    animation:pulse 1.5s infinite;
+    animation:pulse 2s infinite;
 }
 
 .online .status-dot{
