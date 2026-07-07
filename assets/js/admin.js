@@ -129,3 +129,70 @@ form.addEventListener("submit", async (e)=>{
     }
 
 });
+function editVPN(id){
+
+    const vpn = vpnData.find(v=>v.id===id);
+
+    if(!vpn) return;
+
+    editingId = vpn.id;
+
+    document.getElementById("title").value = vpn.title;
+
+    document.getElementById("country").value = vpn.country;
+
+    document.getElementById("type").value = vpn.type;
+
+    document.getElementById("config").value = vpn.config;
+
+    document.getElementById("premium").value = vpn.is_premium;
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+async function deleteVPN(id){
+
+    const ok = confirm("Delete this VPN?");
+
+    if(!ok) return;
+
+    const res = await fetch("/api/delete",{
+
+        method:"POST",
+
+        headers:{
+
+            "Content-Type":"application/json"
+
+        },
+
+        body:JSON.stringify({
+
+            id:id
+
+        })
+
+    });
+
+    const result = await res.json();
+
+    alert(result.message);
+
+    if(result.success){
+
+        loadVPN();
+
+    }
+
+}
+
+window.editVPN = editVPN;
+
+window.deleteVPN = deleteVPN;
