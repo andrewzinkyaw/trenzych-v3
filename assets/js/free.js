@@ -128,19 +128,19 @@ function getFlag(country){
 
     const flags = {
 
-        "Singapore":"assets/flags/sg.svg",
+        "Singapore":"https://hatscripts.github.io/circle-flags/flags/sg.svg",
 
-        "Japan":"assets/flags/jp.svg",
+        "Japan":"https://hatscripts.github.io/circle-flags/flags/jp.svg",
 
-        "USA":"assets/flags/us.svg",
+        "USA":"https://hatscripts.github.io/circle-flags/flags/us.svg",
 
-        "Germany":"assets/flags/de.svg",
+        "Germany":"https://hatscripts.github.io/circle-flags/flags/de.svg",
 
-        "United Kingdom":"assets/flags/gb.svg"
+        "United Kingdom":"https://hatscripts.github.io/circle-flags/flags/gb.svg"
 
     };
 
-    const flag = flags[country] || "assets/flags/world.svg";
+    const flag = flags[country] || "https://hatscripts.github.io/circle-flags/flags/un.svg";
 
     return `<img src="${flag}" class="flag">`;
 
