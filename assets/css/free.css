@@ -185,8 +185,18 @@ transform:translateY(-4px);
 }
 
 .online .status-dot{
-    width:12px;
-    height:12px;
+    width:8px;
+    height:8px;
+    min-width:8px;
+    min-height:8px;
+    border-radius:50%;
+    background:#00ff66;
+
+    box-shadow:
+        0 0 4px #00ff66,
+        0 0 8px rgba(0,255,102,.25);
+
+    animation:pulse 2s infinite;
 }
 
 .country-row{
