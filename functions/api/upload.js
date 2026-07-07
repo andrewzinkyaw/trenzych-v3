@@ -4,29 +4,31 @@ export async function onRequestPost(context) {
   try {
     const data = await request.json();
 
-    const title = data.title;
-    const country = data.country;
-    const config = data.config;
-    const is_premium = data.is_premium ? 1 : 0;
+    const { title, country, type, config } = data;
 
-    if (!title || !country || !config) {
+    if (!title || !country || !type || !config) {
       return Response.json({
         success: false,
-        message: "Missing fields"
+        message: "All fields are required"
       });
     }
 
-    await env.DB.prepare(
-      `INSERT INTO vless_keys
-      (title, country, config, is_premium)
-      VALUES (?, ?, ?, ?)`
+    await env.DB.prepare(`
+      INSERT INTO vless_keys
+      (title, country, type, config, is_premium)
+      VALUES (?, ?, 'VLESS', ?, ?)
+    `)
+    .bind(
+      title,
+      country,
+      config,
+      type === "Premium" ? 1 : 0
     )
-      .bind(title, country, config, is_premium)
-      .run();
+    .run();
 
     return Response.json({
       success: true,
-      message: "Key uploaded successfully"
+      message: "VLESS Key Uploaded Successfully"
     });
 
   } catch (e) {
