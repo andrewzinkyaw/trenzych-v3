@@ -39,9 +39,6 @@ ${vpn.is_premium ? "💎 PREMIUM" : "FREE"}
 
 <span class="online">
 
-
-<span class="online">
-
 <span class="status-dot"></span>
 
 ONLINE
