@@ -621,3 +621,20 @@ font-size:17px;
 .buy-btn:hover::before{
     left:160%;
 }
+
+/* Desktop */
+@media (min-width: 768px){
+
+    .pricing{
+        max-width:1200px;
+        margin:60px auto;
+        padding:0 20px;
+    }
+
+    .plan-card{
+        width:420px;
+        max-width:100%;
+        margin:40px auto;
+    }
+
+}
