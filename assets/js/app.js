@@ -19,7 +19,7 @@ btn.onclick = async () => {
     alert(JSON.stringify(data));
 
     if (data.success) {
-      localStorage.setItem("admin", "true");
+      localStorage.setItem("admin", "1");
       alert("LOGIN SUCCESS");
       window.location.href = "/ms-admin/dashboard.html";
     } else {
