@@ -18,7 +18,8 @@ alert(JSON.stringify(data));
   
   if (data.success) {
     localStorage.setItem("admin", "true");
-    location.href = "/ms-admin/dashboard.html";
+    document.body.innerHTML =
+"<pre>" + JSON.stringify(data, null, 2) + "</pre>";
   } else {
     document.getElementById("msg").innerText = data.message;
   }
