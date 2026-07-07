@@ -192,3 +192,18 @@ footer{
     margin-top:70px;
 
 }
+
+.flag{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-right:8px;
+    vertical-align:middle;
+    box-shadow:0 0 6px rgba(255,255,255,.2);
+}
+
+.country-row span:first-child{
+    display:flex;
+    align-items:center;
+}
