@@ -196,3 +196,12 @@ async function deleteVPN(id){
 window.editVPN = editVPN;
 
 window.deleteVPN = deleteVPN;
+async function refreshList(){
+
+    await loadVPN();
+
+}
+
+setInterval(refreshList,30000);
+
+loadVPN();
