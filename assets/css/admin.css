@@ -327,3 +327,23 @@ grid-template-columns:1fr;
 }
 
 }
+.top-bar{
+    display:flex;
+    justify-content:flex-end;
+    margin:20px 0;
+}
+
+.logout-btn{
+    background:#ff3b3b;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+}
+
+.logout-btn:hover{
+    background:#e02b2b;
+}
