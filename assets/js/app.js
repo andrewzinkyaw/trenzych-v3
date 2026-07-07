@@ -14,7 +14,8 @@ btn.onclick = async () => {
   });
 
   const data = await res.json();
-
+alert(JSON.stringify(data));
+  
   if (data.success) {
     localStorage.setItem("admin", "true");
     location.href = "/ms-admin/dashboard.html";
