@@ -8,6 +8,35 @@ const vpnData = [
     speed: "1 Gbps",
     config: "vless://YOUR_CONFIG_1"
 },
+    {
+    country:"USA",
+    name:"🇺🇸 USA #1",
+    protocol:"VLESS",
+    ping:"145 ms",
+    network:"WS + TLS",
+    speed:"1 Gbps",
+    config:"vless://USA"
+},
+
+{
+    country:"Japan",
+    name:"🇯🇵 Japan #1",
+    protocol:"VLESS",
+    ping:"32 ms",
+    network:"WS + TLS",
+    speed:"1 Gbps",
+    config:"vless://JP"
+},
+
+{
+    country:"Singapore",
+    name:"🇸🇬 Singapore #2",
+    protocol:"VLESS",
+    ping:"20 ms",
+    network:"WS + TLS",
+    speed:"1 Gbps",
+    config:"vless://SG2"
+},
 {
     country: "Japan",
     name: "🇯🇵 Japan #1",
@@ -78,3 +107,30 @@ function copyConfig(config){
 }
 
 loadVPN(vpnData);
+const search = document.getElementById("search");
+const country = document.getElementById("country");
+
+function filterVPN(){
+
+    const keyword = search.value.toLowerCase();
+    const selected = country.value;
+
+    const result = vpnData.filter(vpn=>{
+
+        const matchName =
+            vpn.name.toLowerCase().includes(keyword);
+
+        const matchCountry =
+            selected==="all" || vpn.country===selected;
+
+        return matchName && matchCountry;
+
+    });
+
+    loadVPN(result);
+
+}
+
+search.addEventListener("input", filterVPN);
+
+country.addEventListener("change", filterVPN);
