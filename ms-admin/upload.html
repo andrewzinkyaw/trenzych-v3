@@ -1,3 +1,4 @@
+<script>
 const res = await fetch("/api/upload", {
   method: "POST",
   headers: {
@@ -14,5 +15,5 @@ const res = await fetch("/api/upload", {
 alert(res.status);
 
 const data = await res.json();
-
 alert(JSON.stringify(data));
+</script>
