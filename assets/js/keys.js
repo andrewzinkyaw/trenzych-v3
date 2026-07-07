@@ -63,14 +63,14 @@ function render() {
             <div class="buttons">
 
                 <button class="copy"
-                onclick="copyConfig(\`${k.config}\`)">
-                Copy
-                </button>
+onclick="location.href='edit.html?id=${k.id}'">
+Edit
+</button>
 
-                <button class="delete"
-                onclick="deleteKey(${k.id})">
-                Delete
-                </button>
+<button class="delete"
+onclick="deleteKey(${k.id})">
+Delete
+</button>
 
             </div>
 
