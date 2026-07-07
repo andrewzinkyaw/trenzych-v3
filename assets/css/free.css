@@ -100,20 +100,19 @@ padding-bottom:70px;
 
 }
 
-.vpn-card{
+.vpn-card h2{
+    text-align:center;
+    font-size:34px;
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-0.5px;
+    margin:20px 0 10px;
 
-background:#131C2F;
+    color:#F8FAFC;
 
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:22px;
-
-padding:28px;
-
-box-shadow:0 12px 35px rgba(0,0,0,.35);
-
-transition:.3s;
-
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.35),
+        0 8px 20px rgba(255,255,255,.08);
 }
 
 .vpn-card:hover{
