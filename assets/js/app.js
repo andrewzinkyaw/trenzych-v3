@@ -1,3 +1,5 @@
+alert("APP JS LOADED");
+
 const btn = document.getElementById("loginBtn");
 
 btn.onclick = async () => {
