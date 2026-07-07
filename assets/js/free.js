@@ -36,18 +36,6 @@ function render(data) {
 
 </div>
 
-<div class="right">
-
-<span class="online">
-
-<span class="status-dot"></span>
-
-ONLINE
-
-</span>
-
-</div>
-
 <div class="country-row">
 
     <span>${vpn.country}</span>
