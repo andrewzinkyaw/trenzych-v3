@@ -136,9 +136,10 @@ function getFlag(country){
 
         "Germany":"https://hatscripts.github.io/circle-flags/flags/de.svg",
 
-        "United Kingdom":"https://hatscripts.github.io/circle-flags/flags/gb.svg"
+        "United Kingdom":"https://hatscripts.github.io/circle-flags/flags/gb.svg",
 
-    };
+        "Myanmar":"https://hatscripts.github.io/circle-flags/flags/mm.svg"
+};
 
     const flag = flags[country] || "https://hatscripts.github.io/circle-flags/flags/un.svg";
 
