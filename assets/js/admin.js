@@ -6,39 +6,79 @@ let editingId = null;
 
 let vpnData = [];
 
-async function loadVPN() {
+async function loadVPN(){
 
-    const res = await fetch("/api/list");
+    try{
 
-    vpnData = await res.json();
+        const res = await fetch("/api/list");
 
-    render();
+        vpnData = await res.json();
+
+        renderVPN();
+
+    }catch(err){
+
+        alert(err.message);
+
+    }
 
 }
 
-function render() {
+function renderVPN(){
 
     vpnTable.innerHTML = "";
 
-    vpnData.forEach(vpn => {
+    if(vpnData.length===0){
 
-        vpnTable.innerHTML += `
+        vpnTable.innerHTML=`
+
+        <div class="vpn-card">
+
+        <h3>No VPN Keys</h3>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+    vpnData.forEach(vpn=>{
+
+        vpnTable.innerHTML+=`
 
 <div class="vpn-card">
 
+<div class="card-top">
+
 <h3>${vpn.title}</h3>
 
-<p><b>Country :</b> ${vpn.country}</p>
+<span class="badge ${vpn.is_premium ? "premium":"free"}">
 
-<p><b>Protocol :</b> ${vpn.type}</p>
+${vpn.is_premium ? "💎 Premium":"🟢 Free"}
+
+</span>
+
+</div>
 
 <p>
 
-<b>Status :</b>
-
-${vpn.is_premium ? "💎 Premium" : "🟢 Free"}
+🌍 ${vpn.country}
 
 </p>
+
+<p>
+
+📡 ${vpn.type}
+
+</p>
+
+<div class="config-preview">
+
+${vpn.config}
+
+</div>
 
 <div class="admin-buttons">
 
@@ -67,7 +107,6 @@ onclick="deleteVPN(${vpn.id})">
     });
 
 }
-
 form.addEventListener("submit", async (e)=>{
 
     e.preventDefault();
@@ -88,47 +127,50 @@ form.addEventListener("submit", async (e)=>{
 
     };
 
-    const api =
+    const api = editingId
 
-    editingId
+        ? "/api/edit"
 
-    ?
+        : "/api/upload";
 
-    "/api/edit"
+    try{
 
-    :
+        const res = await fetch(api,{
 
-    "/api/upload";
+            method:"POST",
 
-    const res = await fetch(api,{
+            headers:{
 
-        method:"POST",
+                "Content-Type":"application/json"
 
-        headers:{
+            },
 
-            "Content-Type":"application/json"
+            body:JSON.stringify(data)
 
-        },
+        });
 
-        body:JSON.stringify(data)
+        const result = await res.json();
 
-    });
+        alert(result.message);
 
-    const result = await res.json();
+        if(result.success){
 
-    alert(result.message);
+            form.reset();
 
-    if(result.success){
+            editingId = null;
 
-        form.reset();
+            loadVPN();
 
-        editingId=null;
+        }
 
-        loadVPN();
+    }catch(err){
+
+        alert(err.message);
 
     }
 
 });
+
 function editVPN(id){
 
     const vpn = vpnData.find(v=>v.id===id);
@@ -159,35 +201,41 @@ function editVPN(id){
 
 async function deleteVPN(id){
 
-    const ok = confirm("Delete this VPN?");
+    if(!confirm("Delete this VPN?")) return;
 
-    if(!ok) return;
+    try{
 
-    const res = await fetch("/api/delete",{
+        const res = await fetch("/api/delete",{
 
-        method:"POST",
+            method:"POST",
 
-        headers:{
+            headers:{
 
-            "Content-Type":"application/json"
+                "Content-Type":"application/json"
 
-        },
+            },
 
-        body:JSON.stringify({
+            body:JSON.stringify({
 
-            id:id
+                id:id
 
-        })
+            })
 
-    });
+        });
 
-    const result = await res.json();
+        const result = await res.json();
 
-    alert(result.message);
+        alert(result.message);
 
-    if(result.success){
+        if(result.success){
 
-        loadVPN();
+            loadVPN();
+
+        }
+
+    }catch(err){
+
+        alert(err.message);
 
     }
 
@@ -196,12 +244,7 @@ async function deleteVPN(id){
 window.editVPN = editVPN;
 
 window.deleteVPN = deleteVPN;
-async function refreshList(){
-
-    await loadVPN();
-
-}
-
-setInterval(refreshList,30000);
 
 loadVPN();
+
+setInterval(loadVPN,30000);
