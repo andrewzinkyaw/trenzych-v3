@@ -184,6 +184,11 @@ color:#fff;
     animation:pulse 1.5s infinite;
 }
 
+.online .status-dot{
+    width:12px;
+    height:12px;
+}
+
 .country-row{
     display:flex;
     justify-content:space-between;
