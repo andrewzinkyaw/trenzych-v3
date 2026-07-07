@@ -1,106 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upload VLESS Key</title>
-
-<style>
-body{
-background:#0f172a;
-color:#fff;
-font-family:Arial,sans-serif;
-padding:20px;
-}
-
-input,textarea,select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:none;
-font-size:16px;
-}
-
-button{
-width:100%;
-padding:15px;
-background:#2563eb;
-color:#fff;
-border:none;
-border-radius:8px;
-font-size:18px;
-}
-
-a{
-color:#fff;
-text-decoration:none;
-}
-</style>
-
-</head>
-
-<body>
-
-<h2>Upload VLESS Key</h2>
-
-<input id="title" placeholder="Title">
-
-<input id="country" placeholder="Country">
-
-<select id="premium">
-<option value="0">Free</option>
-<option value="1">Premium</option>
-</select>
-
-<textarea id="config" rows="10" placeholder="Paste VLESS Config"></textarea>
-
-<button onclick="upload()">Upload</button>
-
-<br><br>
-
-<a href="dashboard.html">← Back Dashboard</a>
-
 <script>
+document.querySelector("button").onclick = async () => {
 
-async function upload(){
+  const title = document.querySelectorAll("input")[0].value;
+  const country = document.querySelectorAll("input")[1].value;
+  const type = document.querySelector("select").value;
+  const config = document.querySelector("textarea").value;
 
-const res=await fetch("/api/upload",{
+  const res = await fetch("/api/upload", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      title,
+      country,
+      type,
+      config
+    })
+  });
 
-method:"POST",
+  const data = await res.json();
 
-headers:{
-"Content-Type":"application/json"
-},
+  if (data.success) {
+    alert("Upload Success!");
 
-body:JSON.stringify({
-
-title:document.getElementById("title").value,
-
-country:document.getElementById("country").value,
-
-config:document.getElementById("config").value,
-
-is_premium:Number(document.getElementById("premium").value)
-
-})
-
-});
-
-const data=await res.json();
-
-alert(data.message);
-
-if(data.success){
-
-location.href="dashboard.html";
-
-}
-
-}
-
+    document.querySelectorAll("input")[0].value = "";
+    document.querySelectorAll("input")[1].value = "";
+    document.querySelector("textarea").value = "";
+    document.querySelector("select").value = "Free";
+  } else {
+    alert(data.message);
+  }
+};
 </script>
-
-</body>
-
-</html>
