@@ -72,7 +72,7 @@ ${vpn.config}
 
 <button
 class="copy-btn"
-onclick="copyConfig(\`${vpn.config}\`)">
+onclick="copyConfig(`${vpn.config}`, this)">
 
 📋 COPY CONFIG
 
@@ -86,11 +86,20 @@ onclick="copyConfig(\`${vpn.config}\`)">
 
 }
 
-function copyConfig(text){
+function copyConfig(text, btn){
 
     navigator.clipboard.writeText(text);
 
-    alert("Copied!");
+    const oldHTML = btn.innerHTML;
+
+    btn.innerHTML = "✅ COPIED";
+
+    btn.classList.add("copied");
+
+    setTimeout(() => {
+        btn.innerHTML = oldHTML;
+        btn.classList.remove("copied");
+    }, 1800);
 
 }
 
