@@ -174,8 +174,8 @@ online{
 }
 
 .status-dot{
-    width:6px;
-    height:6px;
+    width:7px;
+    height:7px;
    
     min-width:6px;
     min-height:6px;
@@ -187,17 +187,14 @@ online{
         0 0 6px #00ff66,
         0 0 12px rgba(0,255,102,.35);
 
-    animation:pulse 3s infinite;
+    animation:pulse 1.5s infinite;
 }
 
 .online .status-dot{
     display:inline-block;
 
-    width:8px;
-    height:8px;
-
-    min-width:8px;
-    min-height:8px;
+    width:2px;
+    height:2px;
 
     border-radius:50%;
     background:#00ff66;
@@ -206,7 +203,7 @@ online{
         0 0 8px #00ff66,
         0 0 16px rgba(0,255,102,.45);
 
-    animation:pulse 2s infinite;
+    animation:pulse 4s infinite;
 }
 
 .country-row{
