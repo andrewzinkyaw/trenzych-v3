@@ -160,13 +160,16 @@ padding-bottom:70px;
     color:#fff;
 }
 
-.online{
+online{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:8px;
 
-    font-size:18px;
+    font-size:13px;     
     font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+
     color:#fff;
 }
 
