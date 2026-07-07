@@ -38,7 +38,7 @@ function render(data) {
 
 <div class="country-row">
 
-    <span>${vpn.country}</span>
+    <span>${getFlag(vpn.country)} ${vpn.country}</span>
 
     <span>⚡ 5 ms</span>
 
