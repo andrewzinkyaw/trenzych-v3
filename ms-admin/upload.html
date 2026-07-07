@@ -1,19 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload VLESS Key</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    height:180px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    color:white;
+    text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Upload VLESS Key</h2>
+
+<input
+id="title"
+type="text"
+placeholder="Title">
+
+<input
+id="country"
+type="text"
+placeholder="Country">
+
+<select id="type">
+<option value="Free">Free</option>
+<option value="Premium">Premium</option>
+</select>
+
+<textarea
+id="config"
+placeholder="Paste VLESS Config Here"></textarea>
+
+<button id="uploadBtn">
+Upload Key
+</button>
+
+<a class="back" href="dashboard.html">
+← Back to Dashboard
+</a>
+
+</div>
+
+</div>
+
 <script>
-const res = await fetch("/api/upload", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    title,
-    country,
-    type,
-    config
-  })
-});
 
-alert(res.status);
+document.getElementById("uploadBtn").onclick = async () => {
 
-const data = await res.json();
-alert(JSON.stringify(data));
+    const title = document.getElementById("title").value.trim();
+    const country = document.getElementById("country").value.trim();
+    const type = document.getElementById("type").value;
+    const config = document.getElementById("config").value.trim();
+
+    if(!title || !country || !config){
+        alert("Please fill all fields.");
+        return;
+    }
+
+    try{
+
+        const res = await fetch("/api/upload",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                title:title,
+                country:country,
+                type:type,
+                config:config
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+
+            alert("Upload Success!");
+
+            document.getElementById("title").value="";
+            document.getElementById("country").value="";
+            document.getElementById("config").value="";
+            document.getElementById("type").value="Free";
+
+        }else{
+
+            alert(data.message);
+
+        }
+
+    }catch(e){
+
+        alert(e.message);
+
+    }
+
+}
+
 </script>
+
+</body>
+</html>
