@@ -1,40 +1,41 @@
 export async function onRequestPost(context) {
-  const { request, env } = context;
 
-  try {
-    const data = await request.json();
+    const { request, env } = context;
 
-    const { title, country, type, config } = data;
+    const body = await request.json();
 
-    if (!title || !country || !type || !config) {
-      return Response.json({
-        success: false,
-        message: "All fields are required"
-      });
-    }
+    const {
+        title,
+        country,
+        type,
+        config,
+        is_premium
+    } = body;
 
     await env.DB.prepare(`
-      INSERT INTO vless_keys
-      (title, country, type, config, is_premium)
-      VALUES (?, ?, 'VLESS', ?, ?)
+        INSERT INTO vless_keys
+        (
+            title,
+            country,
+            type,
+            config,
+            is_premium
+        )
+        VALUES
+        (?, ?, ?, ?, ?)
     `)
     .bind(
-      title,
-      country,
-      config,
-      type === "Premium" ? 1 : 0
+        title,
+        country,
+        type,
+        config,
+        is_premium
     )
     .run();
 
     return Response.json({
-      success: true,
-      message: "VLESS Key Uploaded Successfully"
+        success: true,
+        message: "VPN Saved Successfully!"
     });
 
-  } catch (e) {
-    return Response.json({
-      success: false,
-      message: e.message
-    });
-  }
 }
