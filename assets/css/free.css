@@ -171,19 +171,17 @@ color:#fff;
 }
 
 .status-dot{
-
-    width:14px;
-
-    height:14px;
-
-    background:#00E676;
-
+    width:18px;
+    height:18px;
     border-radius:50%;
+    background:#00ff66;
 
-    box-shadow:0 0 10px #00E676;
+    box-shadow:
+        0 0 8px #00ff66,
+        0 0 18px #00ff66,
+        0 0 30px rgba(0,255,102,.8);
 
-    flex-shrink:0;
-
+    animation:pulse 1.5s infinite;
 }
 
 .country-row{
@@ -330,4 +328,27 @@ font-size:34px;
 
 font-size:17px;
 
+}
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        box-shadow:
+            0 0 8px #00ff66,
+            0 0 18px #00ff66;
+    }
+
+    50%{
+        transform:scale(1.2);
+        box-shadow:
+            0 0 18px #00ff66,
+            0 0 36px #00ff66,
+            0 0 48px rgba(0,255,102,.9);
+    }
+
+    100%{
+        transform:scale(1);
+        box-shadow:
+            0 0 8px #00ff66,
+            0 0 18px #00ff66;
+    }
 }
