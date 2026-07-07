@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRENZYCH VPN Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+
+</head>
+
+<body>
+
+<div class="admin">
+
+<h1>🛠 TRENZYCH VPN PANEL</h1>
+
+<form id="vpnForm">
+
+<input
+type="text"
+id="title"
+placeholder="VPN Name"
+required
+>
+
+<select id="country">
+<option>Singapore</option>
+<option>Japan</option>
+<option>USA</option>
+<option>Germany</option>
+<option>United Kingdom</option>
+</select>
+
+<select id="type">
+<option>VLESS</option>
+<option>VMESS</option>
+<option>Trojan</option>
+<option>Shadowsocks</option>
+<option>Hysteria</option>
+<option>Outline</option>
+</select>
+
+<select id="premium">
+<option value="0">FREE</option>
+<option value="1">PREMIUM</option>
+</select>
+
+<textarea
+id="config"
+placeholder="Paste VPN Config..."
+rows="8"
+required
+></textarea>
+
+<button type="submit">
+
+➕ SAVE VPN
+
+</button>
+
+</form>
+
+<hr>
+
+<div id="vpnTable"></div>
+
+</div>
+
+<script src="assets/js/admin.js"></script>
+
+</body>
+</html>
