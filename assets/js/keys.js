@@ -14,6 +14,8 @@ async function loadKeys() {
     const res = await fetch("/api/list");
     const data = await res.json();
 
+alert(JSON.stringify(data));
+    
     keys = data;
 
     render();
