@@ -174,8 +174,12 @@ online{
 }
 
 .status-dot{
-    width:10px;
-    height:10px;
+    width:6px;
+    height:6px;
+   
+    min-width:6px;
+    min-height:6px;
+   
     border-radius:50%;
     background:#00ff66;
 
@@ -183,7 +187,7 @@ online{
         0 0 6px #00ff66,
         0 0 12px rgba(0,255,102,.35);
 
-    animation:pulse 2s infinite;
+    animation:pulse 3s infinite;
 }
 
 .online .status-dot{
