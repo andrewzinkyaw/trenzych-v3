@@ -105,7 +105,14 @@ onclick="deleteVPN(${vpn.id})">
 `;
 
     });
+document.getElementById("totalKeys").textContent =
+    vpnData.length;
 
+document.getElementById("freeKeys").textContent =
+    vpnData.filter(v => !v.is_premium).length;
+
+document.getElementById("premiumKeys").textContent =
+    vpnData.filter(v => v.is_premium).length;
 }
 form.addEventListener("submit", async (e)=>{
 
