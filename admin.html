@@ -104,6 +104,16 @@ required
 </div>
 
 <script src="assets/js/admin.js"></script>
+<script>
 
+const token = localStorage.getItem("admin_token");
+
+if(token !== "trenzych-admin-session"){
+
+    location.replace("/login.html");
+
+}
+
+</script>
 </body>
 </html>
