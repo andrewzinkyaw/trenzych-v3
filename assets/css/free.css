@@ -130,7 +130,7 @@ transform:translateY(-4px);
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .badge{
@@ -187,17 +187,10 @@ color:#fff;
 }
 
 .country-row{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:18px;
-
-font-size:22px;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
 }
 
 .vpn-card h2{
