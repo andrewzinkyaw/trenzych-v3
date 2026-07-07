@@ -218,14 +218,15 @@ margin:10px 0;
 }
 
 .protocol{
-    margin:14px 0 22px;
+    margin:12px 0 20px;
 
-    font-size:22px;
+    font-size:18px;
+
     font-weight:500;
 
-    color:rgba(255,255,255,.65);
+    color:#8E97A8;
 
-    letter-spacing:1px;
+    letter-spacing:1.5px;
 
     text-transform:uppercase;
 }
