@@ -1,32 +1,64 @@
-const btn = document.getElementById("loginBtn");
+// ==========================
+// TRENZYCH VPN v3
+// app.js
+// ==========================
 
-btn.onclick = async () => {
-  try {
-    const password = document.getElementById("password").value;
+// Mobile Menu
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        password: password
-      })
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("active");
+
+});
+
+// Close Menu When Click Link
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("active");
+
     });
 
-    const data = await res.json();
+});
 
-    alert(JSON.stringify(data));
+// Close Menu When Click Outside
+document.addEventListener("click", (e) => {
 
-    if (data.success) {
-      localStorage.setItem("admin", "1");
-      alert("LOGIN SUCCESS");
-      window.location.href = "/ms-admin/dashboard.html";
-    } else {
-      alert(data.message);
-      document.getElementById("msg").innerText = data.message;
+    if (
+        !mobileMenu.contains(e.target) &&
+        !menuBtn.contains(e.target)
+    ) {
+
+        mobileMenu.classList.remove("active");
+
     }
-  } catch (e) {
-    alert(e.toString());
-  }
-};
+
+});
+
+// Navbar Shadow On Scroll
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 20) {
+
+        navbar.style.boxShadow =
+            "0 10px 30px rgba(0,0,0,.35)";
+
+    } else {
+
+        navbar.style.boxShadow = "none";
+
+    }
+
+});
+
+// Smooth Fade In
+window.addEventListener("load", () => {
+
+    document.body.style.opacity = "1";
+
+});
