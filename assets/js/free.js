@@ -25,13 +25,14 @@ function render(data) {
 
 <div class="top">
 
-<div class="left">
+    <span class="badge ${vpn.is_premium ? 'premium' : 'free'}">
+        ${vpn.is_premium ? "💎 PREMIUM" : "FREE"}
+    </span>
 
-<span class="badge ${vpn.is_premium ? "premium" : "free"}">
-
-${vpn.is_premium ? "💎 PREMIUM" : "FREE"}
-
-</span>
+    <span class="online">
+        <span class="status-dot"></span>
+        ONLINE
+    </span>
 
 </div>
 
@@ -47,21 +48,11 @@ ONLINE
 
 </div>
 
-</div>
-
 <div class="country-row">
 
-<span>
+    <span>${vpn.country}</span>
 
-${vpn.country}
-
-</span>
-
-<span>
-
-⚡ 5 ms
-
-</span>
+    <span>⚡ 5 ms</span>
 
 </div>
 
