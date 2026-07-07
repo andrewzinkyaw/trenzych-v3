@@ -1,15 +1,39 @@
-export async function onRequestPost(context) {
-  const { request, env } = context;
+export async function onRequestPost({ request, env }) {
 
-  const data = await request.json();
+    try {
 
-  await env.DB.prepare(
-    "DELETE FROM vless_keys WHERE id = ?"
-  )
-    .bind(data.id)
-    .run();
+        const body = await request.json();
 
-  return Response.json({
-    success: true
-  });
+        const { id } = body;
+
+        if (!id) {
+
+            return Response.json({
+                success: false,
+                message: "VPN ID is required."
+            });
+
+        }
+
+        await env.DB.prepare(`
+            DELETE FROM vless_keys
+            WHERE id = ?
+        `)
+        .bind(Number(id))
+        .run();
+
+        return Response.json({
+            success: true,
+            message: "VPN Deleted Successfully!"
+        });
+
+    } catch (err) {
+
+        return Response.json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
 }
