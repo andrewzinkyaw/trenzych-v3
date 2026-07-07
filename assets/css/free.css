@@ -623,18 +623,18 @@ font-size:17px;
 }
 
 /* Desktop */
-@media (min-width: 768px){
+@media (min-width:768px){
 
     .pricing{
-        max-width:1200px;
-        margin:60px auto;
-        padding:0 20px;
+        display:flex;
+        justify-content:center;
+        padding:40px 20px;
     }
 
     .plan-card{
-        width:420px;
-        max-width:100%;
-        margin:40px auto;
+        width:430px;
+        max-width:430px;
+        margin:0 auto;
     }
 
 }
