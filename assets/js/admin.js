@@ -255,3 +255,20 @@ window.deleteVPN = deleteVPN;
 loadVPN();
 
 setInterval(loadVPN,30000);
+const logoutBtn = document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+    logoutBtn.onclick = () => {
+
+        if(confirm("Logout now?")){
+
+            localStorage.removeItem("admin_token");
+
+            location.href="/login.html";
+
+        }
+
+    };
+
+}
