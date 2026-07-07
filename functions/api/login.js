@@ -1,19 +1,48 @@
-export async function onRequestPost(context) {
-  try {
-    const { request, env } = context;
+export async function onRequestPost({ request }) {
 
-    const data = await request.json();
+    try {
 
-    return Response.json({
-      success: true,
-      received: data,
-      dbExists: !!env.DB
-    });
+        const body = await request.json();
 
-  } catch (e) {
-    return Response.json({
-      success: false,
-      error: e.toString()
-    });
-  }
+        const username = body.username?.trim();
+
+        const password = body.password;
+
+        if (
+            username === "adminms7" &&
+            password === "MS7LUCKYMAN135512"
+        ) {
+
+            return Response.json({
+
+                success: true,
+
+                token: "trenzych-admin-session",
+
+                message: "Login successful."
+
+            });
+
+        }
+
+        return Response.json({
+
+            success: false,
+
+            message: "Invalid username or password."
+
+        });
+
+    } catch (err) {
+
+        return Response.json({
+
+            success: false,
+
+            message: err.message
+
+        });
+
+    }
+
 }
