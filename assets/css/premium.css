@@ -576,14 +576,14 @@ box-sizing: border-box;
 
 .plan-badge{
     position:absolute;
-    top:-18px;
+    top:0;
     left:50%;
     transform:translateX(-50%);
     display:inline-flex;
     align-items:center;
     gap:8px;
 
-    padding:12px 24px;
+    padding:10px 24px;
     border-radius:999px;
 
     color:#fff;
