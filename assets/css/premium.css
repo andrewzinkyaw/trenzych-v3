@@ -573,3 +573,34 @@ box-sizing: border-box;
     border:2px solid #00E676;
     box-shadow:0 20px 50px rgba(0,230,118,.25);
 }
+
+.plan-badge{
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 24px;
+    border-radius:999px;
+
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+}
+
+.plan-badge.starter{
+    background:linear-gradient(135deg,#C67A2B,#E09B45);
+}
+
+.plan-badge.popular{
+    background:linear-gradient(135deg,#BFC5CD,#8D949E);
+}
+
+.plan-badge.pro{
+    background:linear-gradient(135deg,#FF9800,#FF5722);
+}
