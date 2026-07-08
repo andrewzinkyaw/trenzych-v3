@@ -11,10 +11,14 @@ async function loadVPN() {
     vpnData = await res.json();
 
     
-fetch("/api/ping")
+fetch("/api/ping?t=" + Date.now())
     .then(res => res.json())
     .then(data => {
         pingData = data;
+        render(vpnData);
+    })
+    .catch(() => {
+        pingData = {};
         render(vpnData);
     });
 }
