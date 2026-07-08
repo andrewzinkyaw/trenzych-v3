@@ -576,19 +576,19 @@ box-sizing: border-box;
 
 .plan-badge{
     position:absolute;
-    top:-20px;
+    top:-14px;
     left:50%;
     transform:translateX(-50%);
     display:inline-flex;
     align-items:center;
     gap:8px;
 
-    padding:70px 28px 28px;
+    padding:8px 18px;
     border-radius:999px;
 
     color:#fff;
-    font-size:15px;
-    font-weight:800;
+    font-size:13px;
+    font-weight:700;
     letter-spacing:.5px;
     text-transform:uppercase;
 }
