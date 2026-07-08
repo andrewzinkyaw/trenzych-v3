@@ -1,0 +1,223 @@
+/* ==========================
+   PAGE HEADER
+========================== */
+
+.page-header{
+
+    padding:120px 20px 35px;
+
+    text-align:center;
+
+    background:linear-gradient(180deg,#14253B,#0A1222);
+
+}
+
+.page-header h1{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    color:#00E676;
+
+    margin-bottom:12px;
+
+    letter-spacing:1px;
+
+}
+
+.page-header p{
+
+    font-size:20px;
+
+    color:#94A3B8;
+
+}
+
+/* ==========================
+   SEARCH
+========================== */
+
+.search-area{
+
+    width:min(700px,92%);
+
+    margin:35px auto;
+
+}
+
+.search-area input{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    background:#111A2C;
+
+    border:1px solid #334155;
+
+    border-radius:18px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    outline:none;
+
+}
+
+.search-area input:focus{
+
+    border-color:#00E676;
+
+}
+
+/* ==========================
+   APP LIST
+========================== */
+
+.app-list{
+
+    width:min(700px,92%);
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    padding-bottom:70px;
+
+}
+
+/* ==========================
+   APP CARD
+========================== */
+
+.app-card{
+
+    background:#131C2F;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    transition:.3s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.30);
+
+}
+
+.app-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#2196F3;
+
+    box-shadow:0 0 24px rgba(33,150,243,.35);
+
+}
+
+.app-card h2{
+
+    font-size:28px;
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+}
+
+.app-card p{
+
+    color:#9FB2C8;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================
+   TAG
+========================== */
+
+.platform{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:#1E293B;
+
+    color:#00E676;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.download-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#22C55E,#16A34A);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.download-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(34,197,94,.35);
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.page-header h1{
+
+    font-size:38px;
+
+}
+
+.app-card h2{
+
+    font-size:24px;
+
+}
+
+}
