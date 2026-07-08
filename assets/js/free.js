@@ -11,7 +11,7 @@ async function loadVPN() {
     vpnData = await res.json();
 
     
-fetch("data/ping.json")
+fetch("/api/ping")
     .then(res => res.json())
     .then(data => {
         pingData = data;
