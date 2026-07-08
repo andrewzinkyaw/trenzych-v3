@@ -505,19 +505,20 @@ box-sizing: border-box;
 }
 
 .plan-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display:block;
     width:100%;
+    margin-top:20px;
     padding:15px;
-    border-radius:16px;
+    text-align:center;
+
     text-decoration:none;
-    font-weight:700;
-    font-size:17px;
     color:#fff;
+    font-weight:700;
+
     background:linear-gradient(135deg,#00e676,#00c853);
-    transition:.3s;
-    box-shadow:0 10px 30px rgba(0,230,118,.25);
+    border-radius:14px;
+
+    box-sizing:border-box;
 }
 
 .plan-btn:hover{
