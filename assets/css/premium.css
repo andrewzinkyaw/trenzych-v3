@@ -275,3 +275,65 @@
     font-size:16px;
     line-height:1.8;
 }
+
+/* ===== HOW TO BUY ===== */
+
+.how-buy{
+    width:90%;
+    max-width:1100px;
+    margin:80px auto;
+    text-align:center;
+}
+
+.how-buy h2{
+    color:#fff;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+}
+
+.step-card{
+    background:#1b2238;
+    border:1px solid rgba(0,255,180,.18);
+    border-radius:22px;
+    padding:30px 24px;
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(0,255,180,.08);
+}
+
+.step-card:hover{
+    transform:translateY(-8px);
+    border-color:#00ff99;
+    box-shadow:0 20px 40px rgba(0,255,180,.25);
+}
+
+.step-number{
+    width:60px;
+    height:60px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00ff99,#00cc66);
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.step-card h3{
+    color:#fff;
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+.step-card p{
+    color:#9fa9c5;
+    line-height:1.7;
+    font-size:15px;
+}
