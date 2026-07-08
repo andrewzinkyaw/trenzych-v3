@@ -604,3 +604,11 @@ box-sizing: border-box;
 .plan-badge.pro{
     background:linear-gradient(135deg,#FF9800,#FF5722);
 }
+
+.starter-badge{
+    background:linear-gradient(90deg,#C97B2E,#E29A42);
+}
+
+.popular-badge{
+    background:linear-gradient(90deg,#C9CDD3,#9AA3AE);
+}
