@@ -378,3 +378,48 @@
     line-height:1.8;
     font-size:15px;
 }
+
+/* ===== CONTACT CTA ===== */
+
+.contact-cta{
+    width:90%;
+    max-width:900px;
+    margin:90px auto 120px;
+    text-align:center;
+    background:#1b2238;
+    border:1px solid rgba(0,255,180,.18);
+    border-radius:24px;
+    padding:50px 30px;
+    box-shadow:0 15px 40px rgba(0,255,180,.12);
+}
+
+.contact-cta h2{
+    color:#fff;
+    font-size:38px;
+    margin-bottom:18px;
+}
+
+.contact-cta p{
+    color:#9fa9c5;
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.telegram-btn{
+    display:inline-block;
+    background:linear-gradient(135deg,#00ff99,#00cc66);
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    text-decoration:none;
+    padding:18px 42px;
+    border-radius:999px;
+    transition:.3s;
+    box-shadow:0 12px 35px rgba(0,255,150,.25);
+}
+
+.telegram-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 45px rgba(0,255,150,.4);
+}
