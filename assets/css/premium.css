@@ -615,3 +615,17 @@ box-sizing: border-box;
 .popular-badge{
     background:linear-gradient(90deg,#C9CDD3,#9AA3AE);
 }
+
+.pricing-card.bronze .plan-badge{
+    background:linear-gradient(90deg,#ff9800,#ff5722);
+}
+
+.pricing-card.silver .plan-badge{
+    background:linear-gradient(90deg,#dfe4ea,#b0b8c4);
+    color:#fff;
+}
+
+.pricing-card.gold .plan-badge{
+    background:linear-gradient(90deg,#ffd54f,#ff9800);
+    color:#fff;
+}
