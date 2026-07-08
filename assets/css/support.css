@@ -63,3 +63,23 @@
     line-height:1.7;
     font-size:15px;
 }
+
+.telegram:hover{
+    border-color:#27A7E7;
+    box-shadow:0 0 30px rgba(39,167,231,.35);
+}
+
+.group:hover{
+    border-color:#5865F2;
+    box-shadow:0 0 30px rgba(88,101,242,.35);
+}
+
+.channel:hover{
+    border-color:#00E676;
+    box-shadow:0 0 30px rgba(0,230,118,.35);
+}
+
+.faq:hover{
+    border-color:#FF9800;
+    box-shadow:0 0 30px rgba(255,152,0,.35);
+}
