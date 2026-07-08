@@ -468,13 +468,22 @@ box-sizing: border-box;
 }
 
 .pricing-card h3{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
     color:#fff;
     font-size:28px;
-    text-align:center;
     margin-bottom:18px;
 }
 
 .pricing-card .plan-price{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:8px;
+
     color:#00ff88;
     font-size:46px;
     font-weight:800;
