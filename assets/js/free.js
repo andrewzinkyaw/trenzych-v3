@@ -56,7 +56,7 @@ ${vpn.type}
 
 </div>
 
-<div class="active">
+<div class="vpn-active">
 
 <span class="status-dot"></span>
 
