@@ -467,6 +467,10 @@ box-sizing: border-box;
     box-shadow:0 18px 45px rgba(0,230,118,.18);
 }
 
+.pricing-card{
+    text-align:center;
+}
+
 .pricing-card h3{
     display:flex;
     align-items:center;
@@ -537,15 +541,18 @@ box-sizing: border-box;
 }
 
 .plan-badge{
-    position:absolute;
-    top:18px;
-    right:18px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
     padding:8px 14px;
     border-radius:999px;
     font-size:12px;
     font-weight:700;
     color:#fff;
     letter-spacing:.5px;
+
+    margin:0 auto 18px;
 }
 
 .pricing-card.bronze .plan-badge{
