@@ -484,7 +484,7 @@ box-sizing: border-box;
 .pricing-card .plan-price{
     display:flex;
     justify-content:center;
-    align-items:flex-end;
+    align-items:center;
     gap:8px;
 
     color:#00ff88;
