@@ -221,3 +221,27 @@
 }
 
 }
+
+/* ==========================
+   PLATFORM TITLE
+========================== */
+
+.platform-title{
+
+    width:min(700px,92%);
+
+    margin:40px auto 18px;
+
+    color:#ffffff;
+
+    font-size:30px;
+
+    font-weight:800;
+
+}
+
+.platform-title span{
+
+    color:#00E676;
+
+}
