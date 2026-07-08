@@ -133,28 +133,22 @@ button{
    MOBILE MENU
 ========================== */
 
+
 .mobile-menu{
+    position: fixed;
+    top: 72px;
+    right: -260px;
+    width: 240px;
+    height: calc(100vh - 72px);
 
-    position:fixed;
+    background: #101B2D !important;
 
-    top:72px;
+    border-radius: 0 !important;
+    border: none !important;
+    overflow: auto !important;
 
-    right:-260px;
-
-    width:240px;
-
-    height:100vh;
-
-    background:#101B2D;
-
-    transition:.35s;
-
-    padding:30px 20px;
-
-    z-index:999;
-
-    border-left:1px solid rgba(255,255,255,.08);
-
+    transition: .35s;
+    z-index: 9999;
 }
 
 .mobile-menu.active{
