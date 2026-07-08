@@ -1,3 +1,4 @@
+let pingData = {};
 const vpnList = document.getElementById("vpnList");
 const search = document.getElementById("search");
 const country = document.getElementById("country");
@@ -9,8 +10,13 @@ async function loadVPN() {
     const res = await fetch("/api/list");
     vpnData = await res.json();
 
-    render(vpnData);
-
+    
+fetch("data/ping.json")
+    .then(res => res.json())
+    .then(data => {
+        pingData = data;
+        render(vpnData);
+    });
 }
 
 function render(data) {
@@ -40,7 +46,7 @@ function render(data) {
 
     <span>${getFlag(vpn.country)} ${vpn.country}</span>
 
-    <span>⚡ 5 ms</span>
+<span>⚡ ${pingData[vpn.country] || "--"} ms</span>
 
 </div>
 
