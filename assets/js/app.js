@@ -62,3 +62,39 @@ window.addEventListener("load", () => {
     document.body.style.opacity = "1";
 
 });
+
+// ===== Live Stats =====
+
+async function loadHomeStats() {
+
+    // VPN Keys
+    try {
+        const res = await fetch("/api/keys");
+        const vpn = await res.json();
+
+        const keyEl = document.getElementById("liveKeys");
+        if (keyEl) {
+            keyEl.textContent = vpn.length;
+        }
+    } catch (e) {}
+
+    // Average Ping
+    try {
+        const res = await fetch("/data/ping.json?" + Date.now());
+        const ping = await res.json();
+
+        const values = Object.values(ping).filter(v => v > 0);
+
+        const avg = values.length
+            ? Math.round(values.reduce((a,b)=>a+b,0)/values.length)
+            : "--";
+
+        const pingEl = document.getElementById("livePing");
+        if (pingEl) {
+            pingEl.textContent = avg + " ms";
+        }
+
+    } catch (e) {}
+}
+
+loadHomeStats();
