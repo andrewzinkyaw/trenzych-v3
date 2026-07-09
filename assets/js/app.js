@@ -69,7 +69,7 @@ async function loadHomeStats() {
 
     // VPN Keys
     try {
-        const res = await fetch("/api/keys");
+        const res = await fetch("/api/lists");
         const vpn = await res.json();
 
         const keyEl = document.getElementById("vpnKeys");
