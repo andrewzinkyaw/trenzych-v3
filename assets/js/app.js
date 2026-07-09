@@ -79,22 +79,19 @@ async function loadHomeStats() {
     } catch (e) {}
 
     // Average Ping
-    try {
-        const res = await fetch("/data/ping.json?" + Date.now());
-        const ping = await res.json();
+try {
+    const res = await fetch("/api/ping");
+    const ping = await res.json();
 
-        const values = Object.values(ping).filter(v => v > 0);
+    const pingEl = document.getElementById("avgPing");
+    if (pingEl) {
+        pingEl.textContent = ping.average + " ms";
+    }
 
-        const avg = values.length
-            ? Math.round(values.reduce((a,b)=>a+b,0)/values.length)
-            : "--";
-
-        const pingEl = document.getElementById("avgPing");
-        if (pingEl) {
-            pingEl.textContent = avg + " ms";
-        }
-
-    } catch (e) {}
+} catch (e) {
+    console.log(e);
+}
+    
 }
 
 loadHomeStats();
