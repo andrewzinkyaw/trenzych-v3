@@ -72,7 +72,7 @@ async function loadHomeStats() {
         const res = await fetch("/api/keys");
         const vpn = await res.json();
 
-        const keyEl = document.getElementById("liveKeys");
+        const keyEl = document.getElementById("vpnKeys");
         if (keyEl) {
             keyEl.textContent = vpn.length;
         }
@@ -89,7 +89,7 @@ async function loadHomeStats() {
             ? Math.round(values.reduce((a,b)=>a+b,0)/values.length)
             : "--";
 
-        const pingEl = document.getElementById("livePing");
+        const pingEl = document.getElementById("avgPing");
         if (pingEl) {
             pingEl.textContent = avg + " ms";
         }
