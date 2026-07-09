@@ -241,3 +241,51 @@ max-width:100%;
 }
 
 }
+
+/* ===== Live Stats ===== */
+
+.live-stats{
+    width:90%;
+    max-width:460px;
+    margin:30px auto 50px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.stat-card{
+    background:#182238;
+    border:1px solid rgba(0,255,180,.15);
+    border-radius:18px;
+    height:110px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    transition:.25s;
+    box-shadow:0 8px 20px rgba(0,255,180,.08);
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+    border-color:#00ff99;
+    box-shadow:0 12px 28px rgba(0,255,180,.20);
+}
+
+.stat-icon{
+    font-size:24px;
+    margin-bottom:6px;
+}
+
+.stat-value{
+    font-size:24px;
+    font-weight:700;
+    color:#fff;
+}
+
+.stat-label{
+    font-size:13px;
+    color:#9aa6c0;
+    margin-top:2px;
+}
