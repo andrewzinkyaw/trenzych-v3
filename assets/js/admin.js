@@ -22,6 +22,7 @@ window.onpopstate = function () {
 // Mobile Sidebar
 
 const menuToggle = document.getElementById("menuToggle");
+const closeSidebar = document.getElementById("closeSidebar");
 const sidebar = document.querySelector(".sidebar");
 
 if (menuToggle && sidebar) {
