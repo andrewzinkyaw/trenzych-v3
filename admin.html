@@ -19,103 +19,66 @@
 
 <body>
 
-<div class="admin">
+<div class="admin-layout">
 
-<h1>🛠 TRENZYCH VPN PANEL</h1>
-<div class="top-bar">
-    <button id="logoutBtn" class="logout-btn">
-        🚪 Logout
-    </button>
-</div>
-  <div class="stats">
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-<div class="stat-card">
+        <div class="logo">
+            🛠️
+            <h2>TRENZYCH</h2>
+        </div>
 
-<h2 id="totalKeys">0</h2>
+        <a class="nav-link active" href="#">
+            📊 Dashboard
+        </a>
 
-<p>Total Keys</p>
+        <a class="nav-link" href="#addvpn">
+            ➕ Add VPN
+        </a>
 
-</div>
+        <a class="nav-link" href="#vpnlist">
+            📂 VPN List
+        </a>
 
-<div class="stat-card">
+        <a class="nav-link" href="#">
+            ⚙️ Settings
+        </a>
 
-<h2 id="freeKeys">0</h2>
+        <button id="logoutBtn" class="logout-btn">
+            🚪 Logout
+        </button>
 
-<p>Free Keys</p>
+    </aside>
 
-</div>
+    <!-- Main -->
 
-<div class="stat-card">
+    <main class="content">
 
-<h2 id="premiumKeys">0</h2>
+        <h1>Dashboard</h1>
 
-<p>Premium Keys</p>
+        <div class="stats">
 
-</div>
+            <div class="stat-card">
+                <h2 id="totalKeys">0</h2>
+                <p>Total Keys</p>
+            </div>
 
-</div>
+            <div class="stat-card">
+                <h2 id="freeKeys">0</h2>
+                <p>Free Keys</p>
+            </div>
 
-<form id="vpnForm">
+            <div class="stat-card">
+                <h2 id="premiumKeys">0</h2>
+                <p>Premium Keys</p>
+            </div>
 
-<input
-type="text"
-id="title"
-placeholder="VPN Name"
-required
->
+        </div>
 
-<select id="country">
-<option>Singapore</option>
-<option>Japan</option>
-<option>USA</option>
-<option>Germany</option>
-<option>United Kingdom</option>
-</select>
-
-<select id="type">
-<option>VLESS</option>
-<option>VMESS</option>
-<option>Trojan</option>
-<option>Shadowsocks</option>
-<option>Hysteria</option>
-<option>Outline</option>
-</select>
-
-<select id="premium">
-<option value="0">FREE</option>
-<option value="1">PREMIUM</option>
-</select>
-
-<textarea
-id="config"
-placeholder="Paste VPN Config..."
-rows="8"
-required
-></textarea>
-
-<button type="submit">
-
-➕ SAVE VPN
-
-</button>
-
-</form>
-
-<hr>
-
-<div id="vpnTable"></div>
+    </main>
 
 </div>
-
-<script src="assets/js/admin.js"></script>
-<script>
-
-const token = localStorage.getItem("admin_token");
-
-if (!token) {
-    location.replace("/login.html");
-}
-
-</script>
+    
 </body>
 </html>
