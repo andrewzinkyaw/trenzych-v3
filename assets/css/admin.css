@@ -347,3 +347,115 @@ grid-template-columns:1fr;
 .logout-btn:hover{
     background:#e02b2b;
 }
+
+/* ===== Modern Admin UI ===== */
+
+.admin{
+    max-width:1200px;
+    margin:80px auto;
+}
+
+.admin h1{
+    font-size:44px;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+/* Logout */
+.top-bar{
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.logout-btn{
+    padding:12px 22px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(255,59,59,.25);
+}
+
+/* Stats */
+.stats{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.stat-card{
+    background:#182238;
+    border:1px solid rgba(0,255,170,.15);
+    transition:.25s;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+    border-color:#00E676;
+}
+
+.stat-card h2{
+    font-size:48px;
+}
+
+/* Form */
+
+#vpnForm{
+    margin-top:25px;
+    border:1px solid rgba(0,255,170,.15);
+}
+
+#vpnForm input,
+#vpnForm select,
+#vpnForm textarea{
+    transition:.25s;
+}
+
+#vpnForm input:focus,
+#vpnForm select:focus,
+#vpnForm textarea:focus{
+    box-shadow:0 0 20px rgba(0,230,118,.18);
+}
+
+#vpnForm button{
+    font-size:20px;
+    border-radius:16px;
+}
+
+/* VPN Cards */
+
+#vpnTable{
+    margin-top:40px;
+}
+
+.vpn-card{
+    background:#182238;
+}
+
+.vpn-card:hover{
+    transform:translateY(-6px);
+}
+
+.card-top h3{
+    font-size:26px;
+}
+
+.config-preview{
+    max-height:160px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.admin{
+margin-top:40px;
+}
+
+.admin h1{
+font-size:34px;
+}
+
+.stat-card h2{
+font-size:38px;
+}
+
+}
