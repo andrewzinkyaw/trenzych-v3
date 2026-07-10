@@ -83,6 +83,11 @@ src="assets/js/login.js">
 
 </script>
 
+  // Already logged in
+if (localStorage.getItem("admin_token")) {
+    location.replace("/admin.html");
+}
+  
 </body>
 
 </html>
