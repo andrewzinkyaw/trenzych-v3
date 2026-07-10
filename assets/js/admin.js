@@ -164,18 +164,23 @@ if (form) {
     form.addEventListener("submit", async (e) => {
 
         e.preventDefault();
-
-        const data = {
-            title: document.getElementById("title").value.trim(),
-            country: document.getElementById("country").value,
-            type: document.getElementById("type").value,
-            config: document.getElementById("config").value.trim(),
-            is_premium: Number(document.getElementById("premium").value)
-        };
-
+    
+const data = {
+    id: editingId,
+    title: document.getElementById("title").value.trim(),
+    country: document.getElementById("country").value,
+    type: document.getElementById("type").value,
+    config: document.getElementById("config").value.trim(),
+    is_premium: Number(document.getElementById("premium").value)
+};
+        
         try {
 
-            const res = await fetch("/api/upload", {
+            const api = editingId
+    ? "/api/edit"
+    : "/api/upload";
+
+const res = await fetch(api, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
