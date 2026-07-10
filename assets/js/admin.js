@@ -63,7 +63,6 @@ document.addEventListener("click", (e) => {
     });
 
 });
-}
 
 // Logout
 
