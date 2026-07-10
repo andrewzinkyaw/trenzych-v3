@@ -260,3 +260,55 @@ ${item.config}
     });
 
 }
+let editingId = null;
+
+async function editVPN(id) {
+
+    const res = await fetch("/api/list");
+    const vpn = await res.json();
+
+    const item = vpn.find(v => v.id == id);
+    if (!item) return;
+
+    editingId = id;
+
+    document.getElementById("title").value = item.title;
+    document.getElementById("country").value = item.country;
+    document.getElementById("type").value = item.type;
+    document.getElementById("config").value = item.config;
+    document.getElementById("premium").value = item.is_premium;
+
+    pages.addvpn.style.display = "block";
+    pages.vpnlist.style.display = "none";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+async function deleteVPN(id) {
+
+    if (!confirm("Delete this VPN?")) return;
+
+    const res = await fetch("/api/delete", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            id: id
+        })
+    });
+
+    const result = await res.json();
+
+    alert(result.message);
+
+    if (result.success) {
+        loadVPNList();
+        loadDashboard();
+    }
+
+}
