@@ -26,9 +26,18 @@ const closeSidebar = document.getElementById("closeSidebar");
 const sidebar = document.querySelector(".sidebar");
 
 if (menuToggle && sidebar) {
+
     menuToggle.addEventListener("click", () => {
         sidebar.classList.toggle("show");
     });
+
+    if (closeSidebar) {
+        closeSidebar.addEventListener("click", () => {
+            sidebar.classList.remove("show");
+        });
+    }
+
+}
     // Sidebar အပြင်ကိုနှိပ်ရင် ပိတ်မယ်
 
 document.addEventListener("click", (e) => {
