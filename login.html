@@ -78,15 +78,13 @@ id="msg">
 
 </div>
 
-<script
-src="assets/js/login.js">
+<script src="assets/js/login.js"></script>
 
-</script>
-
-  // Already logged in
+<script>
 if (localStorage.getItem("admin_token")) {
     location.replace("/admin.html");
 }
+</script>
   
 </body>
 
