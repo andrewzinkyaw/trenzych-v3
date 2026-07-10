@@ -288,3 +288,4 @@ if(menuToggle && sidebar){
 
 }
 console.log("Menu JS Loaded");
+alert("admin.js loaded");
