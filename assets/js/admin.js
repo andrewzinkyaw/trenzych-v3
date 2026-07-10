@@ -7,6 +7,13 @@ if (!token || token.trim() === "") {
     location.replace("/login.html");
 }
 
+// Prevent browser cache
+window.history.pushState(null, "", window.location.href);
+
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
 // ==============================
 // TRENZYCH VPN Panel v3
 // admin.js
