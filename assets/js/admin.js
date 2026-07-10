@@ -12,6 +12,31 @@ if (menuToggle && sidebar) {
     menuToggle.addEventListener("click", () => {
         sidebar.classList.toggle("show");
     });
+    // Sidebar အပြင်ကိုနှိပ်ရင် ပိတ်မယ်
+
+document.addEventListener("click", (e) => {
+
+    if (
+        window.innerWidth <= 768 &&
+        sidebar.classList.contains("show") &&
+        !sidebar.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ) {
+        sidebar.classList.remove("show");
+    }
+
+});
+    document.querySelectorAll(".nav-link").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (window.innerWidth <= 768) {
+            sidebar.classList.remove("show");
+        }
+
+    });
+
+});
 }
 
 // Logout
