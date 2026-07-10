@@ -287,3 +287,4 @@ if(menuToggle && sidebar){
     };
 
 }
+console.log("Menu JS Loaded");
