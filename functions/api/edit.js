@@ -13,30 +13,15 @@ export async function onRequestPost({ request, env }) {
             is_premium
         } = body;
 
-        if (
-            !id ||
-            !title ||
-            !country ||
-            !type ||
-            !config
-        ) {
-
-            return Response.json({
-                success: false,
-                message: "Missing required fields."
-            });
-
-        }
-
         await env.DB.prepare(`
             UPDATE vless_keys
             SET
-                title = ?,
-                country = ?,
-                type = ?,
-                config = ?,
-                is_premium = ?
-            WHERE id = ?
+                title=?,
+                country=?,
+                type=?,
+                config=?,
+                is_premium=?
+            WHERE id=?
         `)
         .bind(
             title,
@@ -44,20 +29,20 @@ export async function onRequestPost({ request, env }) {
             type,
             config,
             Number(is_premium),
-            Number(id)
+            id
         )
         .run();
 
         return Response.json({
-            success: true,
-            message: "VPN Updated Successfully!"
+            success:true,
+            message:"VPN Updated Successfully!"
         });
 
-    } catch (err) {
+    } catch(err){
 
         return Response.json({
-            success: false,
-            message: err.message
+            success:false,
+            message:err.message
         });
 
     }
