@@ -194,11 +194,15 @@ const res = await fetch(api, {
 
             if (result.success) {
 
-                form.reset();
+    form.reset();
 
-                loadDashboard();
+    editingId = null;
 
-            }
+    loadDashboard();
+
+    loadVPNList();
+
+}
 
         } catch (err) {
 
