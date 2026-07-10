@@ -201,3 +201,55 @@ if (form) {
     });
 
 }
+async function loadVPNList(){
+
+    const box = document.getElementById("vpnTable");
+    if(!box) return;
+
+    const res = await fetch("/api/list");
+    const vpn = await res.json();
+
+    box.innerHTML = "";
+
+    vpn.forEach(item=>{
+
+        box.innerHTML += `
+        <div class="vpn-card">
+
+            <div class="card-top">
+                <h3>${item.title}</h3>
+
+                <span class="badge ${item.is_premium ? "premium":"free"}">
+                    ${item.is_premium ? "Premium":"Free"}
+                </span>
+            </div>
+
+            <p>🌍 ${item.country}</p>
+            <p>📡 ${item.type}</p>
+
+            <div class="admin-buttons">
+
+                <button
+                    class="edit-btn"
+                    onclick="editVPN(${item.id})">
+
+                    ✏ Edit
+
+                </button>
+
+                <button
+                    class="delete-btn"
+                    onclick="deleteVPN(${item.id})">
+
+                    🗑 Delete
+
+                </button>
+
+            </div>
+
+        </div>
+        `;
+
+    });
+
+}
