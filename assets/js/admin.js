@@ -230,6 +230,10 @@ async function loadVPNList(){
             <p>🌍 ${item.country}</p>
             <p>📡 ${item.type}</p>
 
+            <div class="config-preview">
+${item.config}
+</div>
+
             <div class="admin-buttons">
 
                 <button
