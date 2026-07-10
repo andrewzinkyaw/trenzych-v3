@@ -82,3 +82,56 @@ async function loadDashboard() {
 }
 
 loadDashboard();
+
+// ===== SPA Navigation =====
+
+const pages = {
+    dashboard: document.getElementById("dashboardPage"),
+    addvpn: document.getElementById("addvpnPage"),
+    vpnlist: document.getElementById("vpnlistPage"),
+    settings: document.getElementById("settingsPage")
+};
+
+document.querySelectorAll(".nav-link").forEach(link => {
+
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        // Active Menu
+        document.querySelectorAll(".nav-link").forEach(a=>{
+            a.classList.remove("active");
+        });
+
+        link.classList.add("active");
+
+        // Hide All Pages
+        Object.values(pages).forEach(page=>{
+            page.style.display = "none";
+        });
+
+        // Show Selected Page
+        if(link.textContent.includes("Dashboard")){
+            pages.dashboard.style.display = "block";
+        }
+
+        if(link.textContent.includes("Add VPN")){
+            pages.addvpn.style.display = "block";
+        }
+
+        if(link.textContent.includes("VPN List")){
+            pages.vpnlist.style.display = "block";
+        }
+
+        if(link.textContent.includes("Settings")){
+            pages.settings.style.display = "block";
+        }
+
+        // Mobile Auto Close
+        if(window.innerWidth <= 768){
+            sidebar.classList.remove("show");
+        }
+
+    });
+
+});
