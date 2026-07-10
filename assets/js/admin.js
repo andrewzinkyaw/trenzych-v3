@@ -1,3 +1,12 @@
+// ===== Login Check =====
+
+const token = localStorage.getItem("admin_token");
+
+if (!token || token.trim() === "") {
+    localStorage.removeItem("admin_token");
+    location.replace("/login.html");
+}
+
 // ==============================
 // TRENZYCH VPN Panel v3
 // admin.js
