@@ -151,3 +151,53 @@ document.querySelectorAll(".nav-link").forEach(link => {
     });
 
 });
+
+// ===== Upload VPN =====
+
+const form = document.getElementById("vpnForm");
+
+if (form) {
+
+    form.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const data = {
+            title: document.getElementById("title").value.trim(),
+            country: document.getElementById("country").value,
+            type: document.getElementById("type").value,
+            config: document.getElementById("config").value.trim(),
+            is_premium: Number(document.getElementById("premium").value)
+        };
+
+        try {
+
+            const res = await fetch("/api/upload", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+
+            alert(result.message);
+
+            if (result.success) {
+
+                form.reset();
+
+                loadDashboard();
+
+            }
+
+        } catch (err) {
+
+            alert(err.message);
+
+        }
+
+    });
+
+}
