@@ -272,3 +272,18 @@ if(logoutBtn){
     };
 
 }
+
+// ===== Mobile Sidebar =====
+
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.querySelector(".sidebar");
+
+if(menuToggle && sidebar){
+
+    menuToggle.onclick = () => {
+
+        sidebar.classList.toggle("show");
+
+    };
+
+}
