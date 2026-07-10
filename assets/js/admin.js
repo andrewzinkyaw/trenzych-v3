@@ -136,7 +136,10 @@ document.querySelectorAll(".nav-link").forEach(link => {
         }
 
         if(link.textContent.includes("VPN List")){
-            pages.vpnlist.style.display = "block";loadVPNList();
+            pages.vpnlist.style.display = "block";
+            
+loadVPNList();
+            
         }
 
         if(link.textContent.includes("Settings")){
