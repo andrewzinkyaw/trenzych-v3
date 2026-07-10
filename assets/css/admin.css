@@ -516,8 +516,9 @@ body{
     color:#08111F;
 }
 
+
 .logout-btn{
-    margin-top:auto;
+    margin-top:30px;
     background:#EF4444;
     color:#fff;
     border:none;
@@ -526,7 +527,6 @@ body{
     cursor:pointer;
     font-weight:700;
 }
-
 /* Main */
 
 .content{
