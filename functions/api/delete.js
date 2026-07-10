@@ -4,34 +4,23 @@ export async function onRequestPost({ request, env }) {
 
         const body = await request.json();
 
-        const { id } = body;
-
-        if (!id) {
-
-            return Response.json({
-                success: false,
-                message: "VPN ID is required."
-            });
-
-        }
-
         await env.DB.prepare(`
             DELETE FROM vless_keys
-            WHERE id = ?
+            WHERE id=?
         `)
-        .bind(Number(id))
+        .bind(body.id)
         .run();
 
         return Response.json({
-            success: true,
-            message: "VPN Deleted Successfully!"
+            success:true,
+            message:"VPN Deleted Successfully!"
         });
 
-    } catch (err) {
+    } catch(err){
 
         return Response.json({
-            success: false,
-            message: err.message
+            success:false,
+            message:err.message
         });
 
     }
