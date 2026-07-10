@@ -63,25 +63,100 @@
     <h2>TRENZYCH VPN PANEL</h2>
 
 </div>
-        <h1>Dashboard</h1>
+        
+<!-- Dashboard -->
 
-        <div class="stats">
+<section id="dashboardPage" class="page">
 
-            <div class="stat-card">
-                <h2 id="totalKeys">0</h2>
-                <p>Total Keys</p>
-            </div>
+    <h1>Dashboard</h1>
 
-            <div class="stat-card">
-                <h2 id="freeKeys">0</h2>
-                <p>Free Keys</p>
-            </div>
+    <div class="stats">
 
-            <div class="stat-card">
-                <h2 id="premiumKeys">0</h2>
-                <p>Premium Keys</p>
-            </div>
+        <div class="stat-card">
+            <h2 id="totalKeys">0</h2>
+            <p>Total Keys</p>
+        </div>
 
+        <div class="stat-card">
+            <h2 id="freeKeys">0</h2>
+            <p>Free Keys</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="premiumKeys">0</h2>
+            <p>Premium Keys</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Add VPN -->
+
+<section id="addvpnPage" class="page" style="display:none;">
+
+    <h1>Add VPN</h1>
+
+    <form id="vpnForm">
+
+        <input
+            id="title"
+            placeholder="VPN Name"
+            required
+        >
+
+        <select id="country">
+            <option>Singapore</option>
+            <option>Japan</option>
+            <option>USA</option>
+        </select>
+
+        <select id="type">
+            <option>VLESS</option>
+            <option>VMESS</option>
+            <option>Trojan</option>
+            <option>Shadowsocks</option>
+            <option>Outline</option>
+        </select>
+
+        <select id="premium">
+            <option value="0">FREE</option>
+            <option value="1">PREMIUM</option>
+        </select>
+
+        <textarea
+            id="config"
+            placeholder="Paste VPN Config..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            ➕ Save VPN
+        </button>
+
+    </form>
+
+</section>
+
+<!-- VPN List -->
+
+<section id="vpnlistPage" class="page" style="display:none;">
+
+    <h1>VPN List</h1>
+
+    <div id="vpnTable"></div>
+
+</section>
+
+<!-- Settings -->
+
+<section id="settingsPage" class="page" style="display:none;">
+
+    <h1>Settings</h1>
+
+    <p>Coming Soon...</p>
+
+</section>
         </div>
 
     </main>
