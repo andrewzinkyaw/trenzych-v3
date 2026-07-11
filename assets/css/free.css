@@ -272,18 +272,18 @@ online{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:8px;
 
     width:fit-content;
-    margin:28px auto;
+    margin:20px auto;
 
-    padding:12px 28px;
+    padding:8px 22px;
 
     border:2px solid #32d74b;
     border-radius:999px;
 
     color:#32d74b;
-    font-size:18px;
+    font-size:16px;
     font-weight:700;
 }
 
