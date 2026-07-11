@@ -83,3 +83,33 @@
     border-color:#1877F2;
     box-shadow:0 0 30px rgba(24,119,242,.35);
 }
+
+/* ===== Mobile ===== */
+@media (max-width:767px){
+
+    .support-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .support-card{
+        padding:18px 12px;
+        border-radius:18px;
+    }
+
+    .support-icon{
+        font-size:38px;
+        margin-bottom:12px;
+    }
+
+    .support-card h3{
+        font-size:18px;
+        margin-bottom:8px;
+    }
+
+    .support-card p{
+        font-size:13px;
+        line-height:1.4;
+    }
+
+}
