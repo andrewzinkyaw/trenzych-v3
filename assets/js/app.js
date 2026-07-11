@@ -75,6 +75,7 @@ async function loadHomeStats() {
         const keyEl = document.getElementById("vpnKeys");
         if (keyEl) {
             keyEl.textContent = vpn.length;
+            keyEl.style.color = "#00E676";
         }
     } catch (e) {}
 
