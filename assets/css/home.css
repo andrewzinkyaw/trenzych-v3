@@ -477,3 +477,30 @@ max-width:100%;
         box-shadow:0 0 6px #00E676;
     }
 }
+
+.stat-line{
+    width:100%;
+    height:32px;
+    margin:12px 0 8px;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:100% 100%;
+}
+
+.stat-line.green{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 32'%3E%3Cpolyline fill='none' stroke='%2300E676' stroke-width='2' points='0,18 20,19 40,22 60,15 80,21 100,12 120,17 140,10 160,20 180,13 200,18 220,11 240,14'/%3E%3C/svg%3E");
+}
+
+.stat-line.yellow{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 32'%3E%3Cpolyline fill='none' stroke='%23FFD54F' stroke-width='2' points='0,20 20,18 40,17 60,10 80,14 100,9 120,16 140,12 160,8 180,15 200,11 220,16 240,13'/%3E%3C/svg%3E");
+}
+
+.stat-note{
+    color:#00E676;
+    font-size:14px;
+    font-weight:600;
+}
+
+.stat-note.stable{
+    color:#00E676;
+}
