@@ -186,13 +186,9 @@
 }
 
 .features{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-    gap:22px;
-
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
 }
 
 .feature{
@@ -203,7 +199,7 @@
 
     border-radius:18px;
 
-    padding:30px;
+    padding:18px 12px;
 
     text-align:center;
 
@@ -221,22 +217,18 @@
 
 .feature{
 
-    font-size:42px;
+    font-size:28px;
 
 }
 
 .feature h3{
-
-    margin:18px 0 10px;
-
+    font-size:18px;
+    margin:10px 0 6px;
 }
 
 .feature p{
-
-    color:#94A3B8;
-
-    line-height:1.6;
-
+    font-size:13px;
+    line-height:1.5;
 }
 
 /* ==========================
