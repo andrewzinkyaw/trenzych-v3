@@ -437,7 +437,7 @@ max-width:100%;
 }
 
 .server-item .ping{
-    font-size:20px;
+    font-size:18px;
     font-weight:700;
     color:#00E676;
     margin-bottom:8px;
@@ -450,13 +450,13 @@ max-width:100%;
     align-items:center;
     gap:6px;
 
-    font-size:15px;
+    font-size:13px;
     color:#ddd;
 }
 
 .status-dot{
-    width:8px;
-    height:8px;
+    width:6px;
+    height:6px;
 
     border-radius:50%;
     background:#00e676;
