@@ -318,17 +318,15 @@ box-sizing: border-box;
 
 .steps{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:24px;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 }
 
 .step-card{
     background:#1b2238;
     border:1px solid rgba(0,255,180,.18);
-    border-radius:22px;
-    padding:30px 24px;
-    transition:.3s;
-    box-shadow:0 10px 30px rgba(0,255,180,.08);
+    border-radius:18px;
+    padding:18px 12px;
 }
 
 .step-card:hover{
@@ -338,13 +336,13 @@ box-sizing: border-box;
 }
 
 .step-number{
-    width:60px;
-    height:60px;
-    margin:0 auto 20px;
+    width:48px;
+    height:48px;
+    margin:0 auto 12px;
     border-radius:50%;
     background:linear-gradient(135deg,#00ff99,#00cc66);
     color:#fff;
-    font-size:28px;
+    font-size:22px;
     font-weight:700;
     display:flex;
     align-items:center;
@@ -353,14 +351,21 @@ box-sizing: border-box;
 
 .step-card h3{
     color:#fff;
-    margin-bottom:12px;
-    font-size:24px;
+    margin-bottom:8px;
+    font-size:20px;
 }
 
 .step-card p{
     color:#9fa9c5;
-    line-height:1.7;
-    font-size:15px;
+    line-height:1.5;
+    font-size:13px;
+}
+
+@media (min-width:768px){
+    .steps{
+        grid-template-columns:repeat(4,1fr);
+        gap:20px;
+    }
 }
 
 /* ===== FAQ ===== */
