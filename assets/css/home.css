@@ -457,3 +457,21 @@ max-width:100%;
 
     box-shadow:0 0 10px #00e676;
 }
+
+@keyframes blinkDot{
+    0%{
+        opacity:1;
+        transform:scale(1);
+        box-shadow:0 0 6px #00E676;
+    }
+    50%{
+        opacity:.35;
+        transform:scale(.8);
+        box-shadow:0 0 18px #00E676;
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+        box-shadow:0 0 6px #00E676;
+    }
+}
