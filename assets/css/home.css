@@ -431,11 +431,11 @@ max-width:100%;
 }
 
 .server-item .ping{
-    font-size:30px;
+    font-size:22px;
     font-weight:700;
-    color:#00e676;
-
-    margin-bottom:10px;
+    color:#00E676;
+    margin-bottom:8px;
+    white-space:nowrap;
 }
 
 .server-item .online{
