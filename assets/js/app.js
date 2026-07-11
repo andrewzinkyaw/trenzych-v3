@@ -84,9 +84,20 @@ try {
     const ping = await res.json();
 
     const pingEl = document.getElementById("avgPing");
-    if (pingEl) {
-        pingEl.textContent = ping.average + " ms";
+
+if (pingEl) {
+
+    pingEl.textContent = ping.average + " ms";
+
+    if (ping.average <= 80) {
+        pingEl.style.color = "#00E676";
+    } else if (ping.average <= 150) {
+        pingEl.style.color = "#FFD54F";
+    } else {
+        pingEl.style.color = "#FF5252";
     }
+
+}
 
 } catch (e) {
     console.log(e);
