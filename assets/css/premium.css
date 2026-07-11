@@ -424,10 +424,14 @@ box-sizing: border-box;
 }
 
 .contact-cta h2{
+    display:block;
+    width:100%;
+    text-align:center;
+
     color:#fff;
     font-size:30px;
     line-height:1.25;
-    margin-bottom:16px;
+    margin:0 0 18px;
 }
 
 .contact-cta p{
