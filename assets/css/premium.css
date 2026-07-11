@@ -414,31 +414,20 @@ box-sizing: border-box;
 .contact-cta{
     width:90%;
     max-width:900px;
-    margin:90px auto 120px;
-    text-align:center;
-    background:#1b2238;
-    border:1px solid rgba(0,255,180,.18);
-    border-radius:24px;
+    margin:80px auto !important;
     padding:50px 30px;
-    box-shadow:0 15px 40px rgba(0,255,180,.12);
+    text-align:center;
+    display:block;
+    clear:both;
+    box-sizing:border-box;
 }
 
 .contact-cta h2{
-    display:block;
-    width:100%;
-    text-align:center;
-
-    color:#fff;
-    font-size:30px;
-    line-height:1.25;
     margin:0 0 18px;
 }
 
 .contact-cta p{
-    color:#9fa9c5;
-    font-size:17px;
-    line-height:1.8;
-    margin-bottom:35px;
+    margin:0 0 30px;
 }
 
 .telegram-btn{
