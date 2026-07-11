@@ -224,3 +224,14 @@ footer{
     display:flex;
     align-items:center;
 }
+
+/* Home Stats Number */
+
+.stat-card h2{
+    font-size:48px;
+    font-weight:800;
+    color:#00E676;
+    text-shadow:
+        0 0 8px rgba(0,230,118,.6),
+        0 0 20px rgba(0,230,118,.4);
+}
