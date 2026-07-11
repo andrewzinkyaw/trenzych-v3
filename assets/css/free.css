@@ -216,6 +216,11 @@ padding-bottom:70px;
     margin-bottom:18px;
 }
 
+.country-row span:first-child{
+    font-size:15px;
+    font-weight:500;
+}
+
 .vpn-card h2{
     text-align:center;
     font-size:26px;
