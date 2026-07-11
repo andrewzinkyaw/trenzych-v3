@@ -16,16 +16,18 @@
 }
 
 .hero-logo{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    margin-bottom:25px;
+    animation: pulse 2s ease-in-out infinite;
+}
 
-    box-shadow:
-        0 0 25px rgba(0,230,118,.45),
-        0 0 70px rgba(0,230,118,.20);
-
-    animation:logoFloat 1.8s ease-in-out infinite;
+@keyframes pulse{
+    0%,100%{
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px #00e676);
+    }
+    50%{
+        transform: scale(1.06);
+        filter: drop-shadow(0 0 40px #00e676);
+    }
 }
 
 .hero h1{
