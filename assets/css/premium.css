@@ -18,9 +18,9 @@
     background:#161f35;
     border:1px solid rgba(0,255,180,.25);
     border-radius:28px;
-    padding:32px 24px;
-    margin:0;
-    max-width:none;
+    padding:22px 18px;
+    margin:30px auto;
+    max-width:360px;
     text-align:center;
     box-shadow:
         0 0 30px rgba(0,180,255,.15),
@@ -55,8 +55,8 @@
 
 
 .plan-flag{
-    width:52px;
-    height:52px;
+    width:42px;
+    height:42px;
     display:block;
     margin:12px auto 20px;
     border-radius:50%;
@@ -75,7 +75,7 @@
 
 .plan-price{
     color:#00ff88;
-    font-size:56px;
+    font-size:48px;
     font-weight:800;
     line-height:1;
     margin:28px 0;
