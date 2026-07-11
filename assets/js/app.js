@@ -84,6 +84,14 @@ try {
     const res = await fetch("/api/ping");
     const ping = await res.json();
 
+    const sg = document.getElementById("sg-ping");
+const jp = document.getElementById("jp-ping");
+const us = document.getElementById("us-ping");
+
+if (sg) sg.textContent = (ping.Singapore || "--") + " ms";
+if (jp) jp.textContent = (ping.Japan || "--") + " ms";
+if (us) us.textContent = (ping.USA || "--") + " ms";
+
     const pingEl = document.getElementById("avgPing");
 
 if (pingEl) {
