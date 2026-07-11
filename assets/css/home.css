@@ -205,6 +205,8 @@
 
     transition:.25s;
 
+    min-height: 180px;
+
 }
 
 .feature:hover{
