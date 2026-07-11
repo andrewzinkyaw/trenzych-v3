@@ -166,13 +166,13 @@ box-sizing: border-box;
 /* Desktop */
 @media (min-width:768px){
 
-    .pricing{
+    .plan{
         display:flex;
         justify-content:center;
         padding:40px 20px;
     }
 
-    .pricing-card{
+    .plan-card{
         width:430px;
         max-width:430px;
         margin:0 auto;
