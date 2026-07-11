@@ -96,7 +96,11 @@ onclick="copyConfig(this)">
 `;
 
     });
-
+document.querySelectorAll(".vpn-card h2").forEach(title => {
+    if (title.textContent.trim().length > 18) {
+        title.classList.add("long-title");
+    }
+});
 }
 
 function copyConfig(btn){
