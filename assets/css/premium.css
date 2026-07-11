@@ -178,6 +178,10 @@ box-sizing: border-box;
         margin:0 auto;
     }
 
+    .best-value{
+        top:12px;
+    }
+
 }
 
 /* ===== FEATURES ===== */
