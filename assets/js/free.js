@@ -87,7 +87,7 @@ class="copy-btn"
 data-config="${encodeURIComponent(vpn.config)}"
 onclick="copyConfig(this)">
 
-📋 COPY CONFIG
+⎙ COPY CONFIG
 
 </button>
 
@@ -107,7 +107,7 @@ function copyConfig(btn){
 
     const oldHTML = btn.innerHTML;
 
-    btn.innerHTML = "✅ COPIED";
+    btn.innerHTML = "☑ COPIED";
 
     btn.classList.add("copied");
 
