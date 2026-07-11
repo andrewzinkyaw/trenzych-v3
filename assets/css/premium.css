@@ -190,17 +190,16 @@ box-sizing: border-box;
 
 .feature-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 }
 
 .feature-card{
     background:#1b2238;
     border:1px solid rgba(0,255,180,.18);
-    border-radius:22px;
-    padding:30px 22px;
-    transition:.3s;
-    box-shadow:0 10px 30px rgba(0,255,180,.08);
+    border-radius:18px;
+    padding:20px 12px;
+    min-height:180px;
 }
 
 .feature-card:hover{
@@ -210,19 +209,19 @@ box-sizing: border-box;
 }
 
 .feature-card{
-    font-size:48px;
+    font-size:36px;
 }
 
 .feature-card h3{
     color:#fff;
     margin:16px 0 10px;
-    font-size:22px;
+    font-size:18px;
 }
 
 .feature-card p{
     color:#9fa9c5;
     line-height:1.7;
-    font-size:15px;
+    font-size:13px;
 }
 
 /* ===== PAYMENT ===== */
