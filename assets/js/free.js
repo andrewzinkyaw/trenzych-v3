@@ -50,7 +50,9 @@ function render(data) {
 
     <span>${getFlag(vpn.country)} ${vpn.country}</span>
 
-<span>⚡ ${pingData[vpn.country] || "--"} ms</span>
+<span class="ping">
+    ⚡ ${pingData[vpn.country] || "--"} ms
+</span>
 
 </div>
 
