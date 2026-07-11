@@ -243,25 +243,21 @@ online{
 }
 
 .vpn-card h2{
-    text-align:center;
+    text-align: center;
 
-    font-size:34px;
+    font-size: clamp(24px, 5vw, 34px);
 
-    font-weight:800;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
 
-    line-height:1.15;
+    margin: 20px 0 10px;
 
-    letter-spacing:-0.5px;
+    background: linear-gradient(180deg,#ffffff,#d9e2ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-    margin:20px 0 10px;
-
-    background:linear-gradient(180deg,#ffffff,#d9e2ef);
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-    text-shadow:0 2px 12px rgba(0,0,0,.25);
+    text-shadow: 0 2px 12px rgba(0,0,0,.25);
 }
 
 .ping{
