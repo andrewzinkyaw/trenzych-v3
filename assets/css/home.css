@@ -282,12 +282,15 @@ max-width:100%;
 
     border-radius:22px;
 
-    height:120px;
+    min-height:140px;
+    height:auto;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
+    padding:18px 12px;
 
     text-decoration:none;
 
@@ -329,20 +332,20 @@ max-width:100%;
 }
 
 .stat-icon{
-    font-size:32px;
-    margin-bottom:10px;
+    font-size:30px;
+    margin-bottom:12px;
 }
 
 .stat-value{
-    font-size:36px;
-    font-weight:800;
-    color:#fff;
+    font-size:42px;
+    line-height:1;
+    margin:8px 0;
 }
 
 .stat-label{
-    font-size:14px;
-    color:#9fb3c8;
-    margin-top:6px;
+    font-size:16px;
+    margin-top:10px;
+    color:#9aa6c0;
 }
 
 .hero{
