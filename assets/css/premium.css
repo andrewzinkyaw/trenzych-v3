@@ -1,6 +1,6 @@
 /* ===== PREMIUM PLAN ===== */
 
-.pricing{
+.plan{
     width:90%;
     max-width:900px;
     margin:40px auto 80px;
@@ -13,7 +13,7 @@
     align-items:stretch;
 }
 
-.pricing-card{
+.plan-card{
     position:relative;
     background:#161f35;
     border:1px solid rgba(0,255,180,.25);
@@ -27,7 +27,7 @@
         0 25px 60px rgba(0,0,0,.45);
 }
 
-.pricing-card::before{
+.plan-card::before{
     content:"";
     position:absolute;
     inset:0;
@@ -54,7 +54,7 @@
 }
 
 
-.pricing-flag{
+.plan-flag{
     width:52px;
     height:52px;
     display:block;
@@ -62,18 +62,18 @@
     border-radius:50%;
 }
    
-.pricing-card h2{
+.plan-card h2{
     color:#fff;
     margin:0;
     font-size:34px;
 }
 
-.pricing-desc{
+.plan-desc{
     color:#9fa9c5;
     margin:12px 0 22px;
 }
 
-.pricing-price{
+.plan-price{
     color:#00ff88;
     font-size:56px;
     font-weight:800;
@@ -82,13 +82,13 @@
     text-shadow:0 0 20px rgba(0,255,136,.25);
 }
 
-.pricing-price span{
+.plan-price span{
     font-size:20px;
     font-weight:700;
     margin-left:6px;
 }
 
-.pricing-item{
+.plan-item{
     display:flex;
     justify-content:space-between;
     padding:14px 0;
