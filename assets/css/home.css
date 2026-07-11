@@ -133,19 +133,53 @@
 }
 
 .free-btn{
-    background:linear-gradient(135deg,#00e676,#00c853);
-    color:#08111f;
-    border:none;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
 
+    color:#ffffff;
     box-shadow:
-        0 10px 30px rgba(0,230,118,.30),
-        inset 0 1px 0 rgba(255,255,255,.20);
+        inset 0 1px 0 rgba(255,255,255,.28),
+        inset 0 -1px 0 rgba(255,255,255,.08),
+        0 10px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
 }
 
 .free-btn:hover{
     transform:translateY(-3px);
+    background:rgba(255,255,255,.18);
+    border-color:rgba(255,255,255,.35);
     box-shadow:
-        0 16px 40px rgba(0,230,118,.45);
+        inset 0 1px 0 rgba(255,255,255,.35),
+        0 16px 40px rgba(255,255,255,.12);
+}
+
+.free-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.free-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform:skewX(-25deg);
+    transition:.8s;
+}
+
+.free-btn:hover::before{
+    left:160%;
 }
 
 .premium-btn{
