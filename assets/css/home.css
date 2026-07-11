@@ -39,14 +39,12 @@
     }
 }
 
-.hero h1{
-
-    font-size:38px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
+.hero p{
+    font-size:16px;
+    line-height:1.8;
+    color:#aeb8c5;
+    max-width:620px;
+    margin:0 auto;
 }
 
 .hero p{
