@@ -138,16 +138,14 @@ padding-bottom:70px;
     align-items:center;
     justify-content:center;
 
-    padding:4px 12px;
-    min-width:58px;
-    height:30px;
+    padding:3px 10px;
+    min-width:48px;
+    height:24px;
 
     border-radius:999px;
 
-    font-size:13px;
+    font-size:11px;
     font-weight:700;
-    line-height:1;
-    text-transform:uppercase;
 }
 
 .badge.free{
@@ -158,6 +156,11 @@ padding-bottom:70px;
 .badge.premium{
     background:linear-gradient(90deg,#8E2DE2,#C2185B);
     color:#fff;
+}
+
+.badge.premium{
+    padding:3px 10px;
+    font-size:11px;
 }
 
 online{
