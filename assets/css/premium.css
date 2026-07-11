@@ -425,8 +425,9 @@ box-sizing: border-box;
 
 .contact-cta h2{
     color:#fff;
-    font-size:38px;
-    margin-bottom:18px;
+    font-size:30px;
+    line-height:1.25;
+    margin-bottom:16px;
 }
 
 .contact-cta p{
