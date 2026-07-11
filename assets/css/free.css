@@ -282,19 +282,19 @@ padding-bottom:70px;
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:8px;
+    gap:6px;
 
     width:fit-content;
     margin:20px auto;
 
-    padding:8px 22px;
+    padding:6px 18px;
 
     border:2px solid #32d74b;
     border-radius:999px;
 
     color:#32d74b;
-    font-size:16px;
-    font-weight:700;
+    font-size:15px;
+    font-weight:600;
 }
 
 /* ==========================
