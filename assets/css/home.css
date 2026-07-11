@@ -393,6 +393,7 @@ max-width:100%;
     background:#00e676;
 
     box-shadow:0 0 12px #00e676;
+    animation: blinkDot 1.2s infinite;
 }
 
 .server-grid{
@@ -456,6 +457,7 @@ max-width:100%;
     background:#00e676;
 
     box-shadow:0 0 10px #00e676;
+    animation: blinkDot 1.2s infinite;
 }
 
 @keyframes blinkDot{
