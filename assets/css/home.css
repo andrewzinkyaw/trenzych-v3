@@ -337,8 +337,8 @@ max-width:100%;
 }
 
 .stat-icon{
-    font-size:30px;
-    margin-bottom:12px;
+    font-size:26px;
+    margin-bottom:8px;
 }
 
 .stat-value{
@@ -349,7 +349,7 @@ max-width:100%;
 
 .stat-label{
     font-size:16px;
-    margin-top:10px;
+    margin-top:6px;
     color:#9aa6c0;
 }
 
@@ -486,7 +486,7 @@ max-width:100%;
 .stat-line{
     width:100%;
     height:32px;
-    margin:12px 0 8px;
+    margin:8px 0 6px;
     background-repeat:no-repeat;
     background-position:center;
     background-size:100% 100%;
@@ -503,6 +503,7 @@ max-width:100%;
 .stat-note{
     color:#00E676;
     font-size:14px;
+    margin-top:4px;
     font-weight:600;
 }
 
