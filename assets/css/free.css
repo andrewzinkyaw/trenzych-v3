@@ -301,7 +301,7 @@ border:1px solid rgba(255,255,255,.08);
 
 border-radius:16px;
 
-padding:18px;
+padding:14px;
 
 font-size:14px;
 
@@ -324,7 +324,7 @@ overflow:auto;
 .copy-btn{
     width:100%;
 
-    padding:18px;
+    padding:16px;
 
     border:none;
 
