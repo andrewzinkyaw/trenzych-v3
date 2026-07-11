@@ -10,7 +10,7 @@
     gap:12px;
 }
 
-.plan-card{
+.pricing-card{
     position:relative;
     background:#161f35;
     border:1px solid rgba(0,255,180,.25);
@@ -24,7 +24,7 @@
         0 25px 60px rgba(0,0,0,.45);
 }
 
-.plan-card::before{
+.pricing-card::before{
     content:"";
     position:absolute;
     inset:0;
@@ -51,7 +51,7 @@
 }
 
 
-.plan-flag{
+.pricing-flag{
     width:52px;
     height:52px;
     display:block;
@@ -59,18 +59,18 @@
     border-radius:50%;
 }
    
-.plan-card h2{
+.pricing-card h2{
     color:#fff;
     margin:0;
     font-size:34px;
 }
 
-.plan-desc{
+.pricing-desc{
     color:#9fa9c5;
     margin:12px 0 22px;
 }
 
-.plan-price{
+.pricing-price{
     color:#00ff88;
     font-size:56px;
     font-weight:800;
@@ -79,13 +79,13 @@
     text-shadow:0 0 20px rgba(0,255,136,.25);
 }
 
-.plan-price span{
+.pricing-price span{
     font-size:20px;
     font-weight:700;
     margin-left:6px;
 }
 
-.plan-item{
+.pricing-item{
     display:flex;
     justify-content:space-between;
     padding:14px 0;
@@ -169,7 +169,7 @@ box-sizing: border-box;
         padding:40px 20px;
     }
 
-    .plan-card{
+    .pricing-card{
         width:430px;
         max-width:430px;
         margin:0 auto;
