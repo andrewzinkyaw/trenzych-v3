@@ -24,7 +24,7 @@
         0 0 25px rgba(0,230,118,.45),
         0 0 70px rgba(0,230,118,.20);
 
-    animation: logoFloat 1.4s ease-in-out infinite;
+    animation: logoFloat 2s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
