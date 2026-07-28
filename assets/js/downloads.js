@@ -1,62 +1,48 @@
-const apps = [
-    {
-        name: "TRENZYCH VPN",
-        platform: "Android",
-        description: "Official TRENZYCH VPN application. Fast, secure and stable VPN with multi-protocol support.",
-        url: "https://telegram.me/trenzych/975",
-        icon: "assets/images/app-icon.png"
-    }
-];
-
-const sections = {
-    Android: document.getElementById("androidApps"),
-    iPhone: document.getElementById("iosApps"),
-    Windows: document.getElementById("windowsApps"),
-    Linux: document.getElementById("linuxApps")
+const app = {
+    name: "TRENZYCH VPN",
+    platform: "Android",
+    version: "v1.0.0",
+    description: "Official TRENZYCH VPN application. Fast, secure and stable VPN with multi-protocol support.",
+    icon: "assets/images/app-icon.png",
+    url: "https://telegram.me/trenzych/975"
 };
 
-function renderApps() {
+const container = document.getElementById("androidApps");
 
-    Object.values(sections).forEach(section => {
-        if (section) section.innerHTML = "";
-    });
+if (container) {
+    container.innerHTML = `
+        <h2 class="platform-title">Android</h2>
 
-    ["Android", "iPhone", "Windows", "Linux"].forEach(platform => {
+        <div class="app-card">
 
-        const list = apps.filter(app => app.platform === platform);
+            <img src="${app.icon}" class="app-icon" alt="${app.name}">
 
-        if (list.length === 0 || !sections[platform]) return;
+            <span class="platform">${app.platform}</span>
 
-        sections[platform].innerHTML += `
-            <h2 class="platform-title">${platform}</h2>
-        `;
+            <h2>${app.name}</h2>
 
-        list.forEach(app => {
+            <div class="version">${app.version}</div>
 
-            sections[platform].innerHTML += `
-                <div class="app-card">
+            <p>${app.description}</p>
 
-                    <img src="${app.icon}"
-                         alt="${app.name}"
-                         class="app-icon">
+            <ul class="feature-list">
+                <li>⚡ Fast Connection</li>
+                <li>🛡 Secure VPN</li>
+                <li>🌍 Multi-Protocol</li>
+                <li>🔄 Auto Server Update</li>
+            </ul>
 
-                    <span class="platform">${app.platform}</span>
+            <a href="${app.url}" class="download-btn" target="_blank">
+                📥 Download APK
+            </a>
 
-                    <h2>${app.name}</h2>
-
-                    <p>${app.description}</p>
-
-                    <button class="download-btn"
-                        onclick="window.open('${app.url}','_blank')">
-                        📥 Download APK
-                    </button>
-
-                </div>
-            `;
-        });
-
-    });
-
+        </div>
+    `;
 }
 
-renderApps();
+["iosApps", "windowsApps", "linuxApps"].forEach(id => {
+    const section = document.getElementById(id);
+    if (section) {
+        section.innerHTML = "";
+    }
+});
