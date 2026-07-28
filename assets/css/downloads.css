@@ -32,3 +32,98 @@ display:block;
 text-align:center;
 text-decoration:none;
 }
+
+/* ===== Premium Download Card ===== */
+
+.app-list{
+    max-width:700px;
+    margin:0 auto 80px;
+    padding:20px;
+}
+
+.platform-title{
+    display:none;
+}
+
+.app-card{
+    background:#1a2238;
+    border:1px solid rgba(0,255,200,.15);
+    border-radius:28px;
+    padding:36px 28px;
+    text-align:center;
+    box-shadow:
+        0 0 35px rgba(0,255,180,.08),
+        inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.app-icon{
+    width:100px;
+    height:100px;
+    border-radius:24px;
+    display:block;
+    margin:0 auto 22px;
+    object-fit:cover;
+    box-shadow:0 0 30px rgba(0,255,180,.25);
+}
+
+.platform{
+    display:inline-block;
+    padding:8px 18px;
+    background:#24314d;
+    color:#00e676;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.app-card h2{
+    font-size:42px;
+    margin:10px 0 6px;
+    color:#fff;
+}
+
+.version{
+    color:#00e676;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.app-card p{
+    color:#b9c3d6;
+    line-height:1.8;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.feature-list{
+    list-style:none;
+    padding:0;
+    margin:0 0 30px;
+    text-align:left;
+}
+
+.feature-list li{
+    padding:10px 0;
+    color:#eef3fb;
+    font-size:17px;
+}
+
+.download-btn{
+    display:block;
+    width:100%;
+    padding:18px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#00d26a,#00b050);
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.download-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 30px rgba(0,255,120,.35);
+}
