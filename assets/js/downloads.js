@@ -11,7 +11,6 @@ const container = document.getElementById("androidApps");
 
 if (container) {
     container.innerHTML = `
-        <h2 class="platform-title">Android</h2>
 
         <div class="app-card">
 
